@@ -3,6 +3,23 @@ alter table SPQConnection add column 'IsWFH' BIT;
 
 INSERT INTO SPQYearMaster(Fld_IsDeleted,Fld_FolderName,Fld_Year) select 0, '2020 - 2021','2020 - 2021' WHERE NOT EXISTS ( SELECT * FROM SPQYearMaster WHERE Fld_IsDeleted = 0 AND Fld_Year = '2020 - 2021');
 
+CREATE TABLE SPQGSTR9CObservation (
+    Fld_Id            INTEGER PRIMARY KEY AUTOINCREMENT
+                              NOT NULL,
+    Fld_GSTIN         TEXT,
+    Fld_Party_Name    TEXT,
+    Certificate_type  TEXT,
+    qual_type         TEXT,
+    value             TEXT,
+    COl_1             TEXT,
+    COl_2             TEXT,
+    COl_3             TEXT,
+    COl_4             TEXT,
+    Fld_FinancialYear TEXT,
+    Fld_Month         TEXT
+);
+
+
 
 
 
