@@ -1,4 +1,48 @@
 
+DROP TABLE IF EXISTS SPQChallan;
+
+CREATE TABLE IF NOT EXISTS SPQChallan (
+    cpin          VARCHAR (20)    NOT NULL
+                                  PRIMARY KEY,
+    chln_cre_dt   VARCHAR (20)    NOT NULL,
+    chln_exp_dt   VARCHAR (10)    NOT NULL,
+    payment_dt    VARCHAR (10)    NOT NULL,
+    chln_rsn      VARCHAR,
+    payment_mod   VARCHAR (10)    NOT NULL,
+    payment_tim   VARCHAR (10)    NOT NULL,
+    status        VARCHAR (10),
+    total_amt     NUMERIC (18, 2),
+    Month         VARCHAR (12)    NOT NULL,
+    FinancialYear VARCHAR (15)    NOT NULL,
+    Pay_Mode      VARCHAR (10)    NOT NULL,
+    Pay_Status    VARCHAR (30)    NOT NULL,
+    tx_igst       NUMERIC (18, 2),
+    tx_cgst       NUMERIC (18, 2),
+    tx_sgst       NUMERIC (18, 2),
+    tx_cess       NUMERIC (18, 2),
+    intr_igst     NUMERIC (18, 2),
+    intr_cgst     NUMERIC (18, 2),
+    intr_sgst     NUMERIC (18, 2),
+    intr_cess     NUMERIC (18, 2),
+    ltfee_igst    NUMERIC (18, 2),
+    ltfee_cgst    NUMERIC (18, 2),
+    ltfee_sgst    NUMERIC (18, 2),
+    ltfee_cess    NUMERIC (18, 2),
+    pnl_igst      NUMERIC (18, 2),
+    pnl_cgst      NUMERIC (18, 2),
+    pnl_sgst      NUMERIC (18, 2),
+    pnl_cess      NUMERIC (18, 2),
+    oth_igst      NUMERIC (18, 2),
+    oth_cgst      NUMERIC (18, 2),
+    oth_sgst      NUMERIC (18, 2),
+    oth_cess      NUMERIC (18, 2),
+    tot_igst      NUMERIC (18, 2),
+    tot_cgst      NUMERIC (18, 2),
+    tot_sgst      NUMERIC (18, 2),
+    tot_cess      NUMERIC (18, 2),
+    tot_total     NUMERIC (18, 2) 
+);
+
 DROP TABLE IF EXISTS SPQR2AInwardSupplies;
 DROP TABLE IF EXISTS SPQR2AB2BAmend;
 DROP TABLE IF EXISTS SPQR2ACND;
