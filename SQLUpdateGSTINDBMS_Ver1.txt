@@ -1,4 +1,25 @@
 
+
+CREATE TABLE SPQQRMPComputeTaxPayable (
+    Fld_Id            INTEGER         PRIMARY KEY AUTOINCREMENT,
+    Fld_Sequence      VARCHAR,
+    Fld_Description   VARCHAR,
+    WithinState       NUMERIC (18, 2),
+    OutsideState      NUMERIC (18, 2),
+    ExpIGST           NUMERIC (18, 2),
+    TotalTaxableValue NUMERIC (18, 2),
+    Rate              VARCHAR,
+    IGST              NUMERIC (18, 2),
+    CGST              NUMERIC (18, 2),
+    SGST              NUMERIC (18, 2),
+    CESS              NUMERIC (18, 2),
+    TotalGST          NUMERIC (18, 2),
+    ComputationType   VARCHAR,
+    TransactionType   VARCHAR,
+    Fld_FinancialYear VARCHAR,
+    Fld_Month         VARCHAR
+);
+
 DROP TABLE IF EXISTS SPQChallan;
 
 CREATE TABLE IF NOT EXISTS SPQChallan (

@@ -1,4 +1,26 @@
 
+INSERT INTO SPQYearMaster(Fld_IsDeleted,Fld_FolderName,Fld_Year) select 0, '2021 - 2022','2021 - 2022' WHERE NOT EXISTS ( SELECT * FROM SPQYearMaster WHERE Fld_IsDeleted = 0 AND Fld_Year = '2021 - 2022');
+
+CREATE TABLE SPQMail_Credential (
+    Fld_ID                           INTEGER PRIMARY KEY AUTOINCREMENT,
+    Fld_GSTIN                        TEXT,
+    Fld_TradeName                    TEXT,
+    Fld_LegalName                    TEXT,
+    Fld_StateName                    TEXT,
+    Fld_DateofRegistration           TEXT,
+    Fld_TaxpayerType                 TEXT,
+    Fld_GSTIN_UIN_Status             TEXT,
+    Fld_ConstitutionofBuisnes        TEXT,
+    Fld_Effectivedate_of_Cancelation TEXT,
+    Fld_Address                      TEXT,
+    Fld_Mobile                       TEXT,
+    Fld_Email_ID                     TEXT,
+    Fld_Mailing_Date                 TEXT,
+    Fld_CC_Mail                      TEXT,
+    Fld_Blank_1                      TEXT,
+    Fld_Blank_2                      TEXT
+);
+
 alter table SPQConnection add column 'IsWFH' BIT;
 
 INSERT INTO SPQYearMaster(Fld_IsDeleted,Fld_FolderName,Fld_Year) select 0, '2020 - 2021','2020 - 2021' WHERE NOT EXISTS ( SELECT * FROM SPQYearMaster WHERE Fld_IsDeleted = 0 AND Fld_Year = '2020 - 2021');
