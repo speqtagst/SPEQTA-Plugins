@@ -1,4 +1,60 @@
 
+alter table SPQTdsReceivedDetail add column 'Fld_DeductorCollectorName' TEXT;
+alter table SPQTdsReceivedDetail Add column 'Editable' TEXT; 
+
+alter table SPQTdsAmendReceivedDetail add column 'Fld_DeductorCollectorName' TEXT;
+alter table SPQTdsAmendReceivedDetail Add column 'Editable' TEXT; 
+
+alter table SPQTcsReceivedDetail add column 'Fld_DeductorCollectorName' TEXT;
+alter table SPQTcsReceivedDetail Add column 'Editable' TEXT; 
+
+alter table SPQTcsAmendReceivedDetail add column 'Fld_DeductorCollectorName' TEXT;
+alter table SPQTcsAmendReceivedDetail Add column 'Editable' TEXT; 
+
+
+CREATE TABLE SQPOptInForQuarterReturn (
+    Fld_Id                  INTEGER PRIMARY KEY,
+    isTurnOverAvailable     TEXT,
+    turnover                TEXT,
+    turnoverThreshold       TEXT,
+    turnoverFy              TEXT,
+    isValid                 TEXT,
+    isdefault               TEXT,
+    quarter                 TEXT,
+    profile                 TEXT,
+    window_start_dt         TEXT,
+    window_end_dt           TEXT,
+    is_active               TEXT,
+    r1_m1_apl               TEXT,
+    r1_m2_apl               TEXT,
+    r1_m3_apl               TEXT,
+    r3b_m1_apl              TEXT,
+    r3b_m2_apl              TEXT,
+    r3b_m3_apl              TEXT,
+    r1_m1_dd                TEXT,
+    r1_m2_dd                TEXT,
+    r1_m3_dd                TEXT,
+    r3b_m1_dd               TEXT,
+    r3b_m2_dd               TEXT,
+    r3b_m3_dd               TEXT,
+    active_other_r1_m1_apl  TEXT,
+    active_other_r1_m2_apl  TEXT,
+    active_other_r1_m3_apl  TEXT,
+    active_other_r3b_m1_apl TEXT,
+    active_other_r3b_m2_apl TEXT,
+    active_other_r3b_m3_apl TEXT,
+    active_other_r1_m1_dd   TEXT,
+    active_other_r1_m2_dd   TEXT,
+    active_other_r1_m3_dd   TEXT,
+    active_other_r3b_m1_dd  TEXT,
+    active_other_r3b_m2_dd  TEXT,
+    active_other_r3b_m3_dd  TEXT,
+    UserAction              TEXT,
+    UserActionDate          TEXT,
+    Fld_Quarter             TEXT,
+    Fld_FinancialYear       TEXT
+);
+
 
 CREATE TABLE SPQQRMPComputeTaxPayable (
     Fld_Id            INTEGER         PRIMARY KEY AUTOINCREMENT,
