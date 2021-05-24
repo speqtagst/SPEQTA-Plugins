@@ -120,6 +120,10 @@ CREATE TABLE IF NOT EXISTS SPQChallan (
     tot_total     NUMERIC (18, 2) 
 );
 
+DROP TABLE IF EXISTS SPQR2AInwardSupplies;
+DROP TABLE IF EXISTS SPQR2AB2BAmend;
+DROP TABLE IF EXISTS SPQR2ACND;
+DROP TABLE IF EXISTS SPQR2ACNDAmend; 
   
 CREATE TABLE IF NOT EXISTS SPQR2AInwardSupplies (Fld_Id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, Fld_Sequence TEXT, Fld_GSTIN TEXT, Fld_NameOfParty TEXT, Fld_InvoiceNo TEXT, Fld_InvoiceDate TEXT, Fld_InvoiceValue TEXT, Fld_Rate TEXT, Fld_InvoiceTaxableVal TEXT, Fld_IntTax TEXT, Fld_CtrlTax TEXT, Fld_StateTax TEXT, Fld_CessTax TEXT, Fld_POS TEXT, Fld_ReverseCharge TEXT, Fld_InvoiceType TEXT, Fld_FileStatus TEXT, Fld_Month TEXT, Fld_Submitted TEXT, Fld_FinancialYear TEXT, Fld_filingPeriodGstr1 TEXT, Fld_filingDateGstr1 TEXT, Fld_gstr3BStatus TEXT, Fld_dtcancel TEXT,
  Col_1 TEXT, Col_2 TEXT, Col_3 TEXT, Col_4 TEXT);
