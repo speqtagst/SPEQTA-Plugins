@@ -1,4 +1,19 @@
 
+CREATE TABLE SpqTemplate (
+    Id           INTEGER     PRIMARY KEY AUTOINCREMENT
+                             NOT NULL,
+    TemplateName STRING (20),
+    Template     TEXT,
+    MailSubject  STRING (30) 
+);
+
+
+
+alter table SPQTaskReminder add column  'Fld_GST_Category'                      TEXT;
+alter table SPQTaskReminder add column  'Fld_GSTIN'             		TEXT;
+alter table SPQTaskReminder add column  Fld_TaskCreatorGSTIN'                 TEXT;
+
+
 alter table SPQCompanyMaster add column  'Fld_GstinDeactivationDate'  TEXT;
 alter table SPQCompanyMaster add column  'Fld_FileNo'                	TEXT;
 alter table SPQCompanyMaster add column  'Fld_Col1'                  	TEXT;
