@@ -8,10 +8,27 @@ CREATE TABLE SpqTemplate (
 );
 
 
+DROP TABLE IF EXISTS SPQTaskReminder; 
 
-alter table SPQTaskReminder add column  'Fld_GST_Category'                      TEXT;
-alter table SPQTaskReminder add column  'Fld_GSTIN'             		TEXT;
-alter table SPQTaskReminder add column  Fld_TaskCreatorGSTIN'                 TEXT;
+CREATE TABLE SPQTaskReminder (
+    Fld_Id               INTEGER PRIMARY KEY AUTOINCREMENT
+                                 NOT NULL,
+    Fld_LegalName        TEXT,
+    Fld_TradeName        TEXT,
+    Fld_NatureOfTask     TEXT,
+    Fld_StatusOfWork     TEXT,
+    Fld_FollowUpDate     TEXT,
+    Fld_Remarks          TEXT,
+    Fld_UserID           TEXT,
+    Fld_InsertDate       TEXT,
+    Fld_UpdateDate       TEXT,
+    Fld_DeleteDate       TEXT,
+    Fld_IsDeleted        INTEGER,
+    Fld_GST_Category     TEXT,
+    Fld_GSTIN            TEXT,
+    Fld_TaskCreatorGSTIN TEXT
+);
+
 
 
 alter table SPQCompanyMaster add column  'Fld_GstinDeactivationDate'  TEXT;
