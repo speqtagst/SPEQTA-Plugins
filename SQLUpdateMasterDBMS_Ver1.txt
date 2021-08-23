@@ -1,4 +1,6 @@
 
+INSERT INTO SPQAssignCompany ( Fld_InsertDate,Fld_UpdateDate) select 'Agreed','EndUserLicenseAgreement' WHERE NOT EXISTS ( SELECT * FROM SPQAssignCompany WHERE  Fld_InsertDate = 'Agreed');
+
 CREATE TABLE SpqTemplate (
     Id           INTEGER     PRIMARY KEY AUTOINCREMENT
                              NOT NULL,
