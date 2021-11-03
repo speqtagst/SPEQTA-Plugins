@@ -1,4 +1,8 @@
 
+
+alter table SPQR2Form4 add Column Fld_ERPVoucherNo TEXT;
+alter table SPQR2Form7Other add Column Fld_ERPVoucherNo TEXT;
+
 alter table SPQTdsReceivedDetail add column 'Fld_DeductorCollectorName' TEXT;
 alter table SPQTdsReceivedDetail Add column 'Editable' TEXT; 
 
