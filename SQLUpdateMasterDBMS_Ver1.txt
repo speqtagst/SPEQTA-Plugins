@@ -1,4 +1,8 @@
 
+
+INSERT INTO SPQYearMaster(Fld_IsDeleted,Fld_FolderName,Fld_Year) select 0, '2022 - 2023','2022 - 2023' WHERE NOT EXISTS ( SELECT * FROM SPQYearMaster WHERE Fld_IsDeleted = 0 AND Fld_Year = '2022 - 2023');
+
+
 INSERT INTO SPQAssignCompany ( Fld_InsertDate,Fld_UpdateDate) select 'Agreed','EndUserLicenseAgreement' WHERE NOT EXISTS ( SELECT * FROM SPQAssignCompany WHERE  Fld_InsertDate = 'Agreed');
 
 CREATE TABLE SpqTemplate (
