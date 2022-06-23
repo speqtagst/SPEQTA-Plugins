@@ -1,4 +1,6 @@
-
+CREATE TABLE SPQLast5Return (
+    Fld_Return TEXT
+);
 
 alter table SPQR2Form4 add Column Fld_ERPVoucherNo TEXT;
 alter table SPQR2Form7Other add Column Fld_ERPVoucherNo TEXT;
