@@ -1,3 +1,125 @@
+CREATE TABLE SPQRGstr1B2b (
+    Fld_Sequence          TEXT PRIMARY KEY
+                               NOT NULL,
+    Fld_CustomerName      TEXT NOT NULL,
+    Fld_PartyName         TEXT,
+    Fld_InvoiceNo         TEXT,
+    Fld_InvoiceDate       TEXT,
+    Fld_InvoiceValue      TEXT,
+    Fld_InvType           TEXT,
+    Fld_IGSTRate          TEXT,
+    Fld_InvoiceTaxableVal TEXT,
+    Fld_IGSTAmnt          TEXT,
+    Fld_CGSTAmnt          TEXT,
+    Fld_SGSTAmnt          TEXT,
+    Fld_CessAmount        TEXT,
+    Fld_POS               TEXT,
+    Fld_IndSupAttac       TEXT,
+    Fld_GSTINofEcom       TEXT,
+    Fld_FileStatus        TEXT,
+    fy                    TEXT,
+    month                 TEXT
+);
+
+CREATE TABLE SPQRGstr1B2cl (
+    Fld_Sequence     TEXT,
+    Fld_PartyName    TEXT,
+    Fld_POS          TEXT,
+    Fld_InvoiceNo    TEXT,
+    Fld_InvoiceDate  TEXT,
+    Fld_InvoiceValue TEXT,
+    Fld_Rate         TEXT,
+    Fld_TaxableValue TEXT,
+    Fld_IGST         TEXT,
+    Fld_Cess         TEXT,
+    Fld_GSTINEComm   TEXT,
+    Fld_FileStatus   TEXT,
+    fy               TEXT,
+    month            TEXT
+);
+
+CREATE TABLE SPQRGstr1B2cs (
+    Fld_Sequence     TEXT,
+    Fld_SupplyType   TEXT,
+    Fld_POS          TEXT,
+    Fld_Rate         TEXT,
+    Fld_TaxableValue TEXT,
+    Fld_IGST         TEXT,
+    Fld_CGST         TEXT,
+    Fld_SGST         TEXT,
+    Fld_Cess         TEXT,
+    Fld_GSTINEComm   TEXT,
+    Fld_FileStatus   TEXT,
+    Fld_NameofEcom   TEXT,
+    fy               TEXT,
+    month            TEXT
+);
+CREATE TABLE SPQRGstr1CDN (
+    Fld_Sequence        TEXT,
+    Fld_GSTIN           TEXT,
+    Fld_PartyName       TEXT,
+    Fld_TypeOfNote      TEXT,
+    Fld_PreGST          TEXT,
+    Fld_DbtCrdtNoteNo   TEXT,
+    Fld_DbtCrdtNoteDate TEXT,
+    Fld_OrgInvoiceNo    TEXT,
+    Fld_OrginvoiceDate  TEXT,
+    Fld_OrgInvoiceValue TEXT,
+    Fld_Rate            NTEXT,
+    Fld_Taxable         TEXT,
+    Fld_IGSTAmnt        TEXT,
+    Fld_CGSTAmnt        TEXT,
+    Fld_SGSTAmnt        TEXT,
+    Fld_CessAmnt        TEXT,
+    Fld_PlaceOfSupply   TEXT,
+    Fld_FileStatus      TEXT,
+    fy                  TEXT,
+    month               TEXT,
+    gstin               TEXT
+);
+
+CREATE TABLE SPQRGstr1CDNUR (
+    Fld_Sequence        TEXT,
+    Fld_PartyName       TEXT,
+    Fld_SupplyType      TEXT,
+    Fld_TypeOfNote      TEXT,
+    Fld_PreGST          TEXT,
+    Fld_DbtCrdtNoteNo   TEXT,
+    Fld_DbtCrdtNoteDate TEXT,
+    Fld_OrgInvoiceValue TEXT,
+    Fld_Rate            TEXT,
+    Fld_Taxable         TEXT,
+    Fld_IGSTAmnt        TEXT,
+    Fld_CGSTAmnt        TEXT,
+    Fld_SGSTAmnt        TEXT,
+    Fld_CessAmnt        TEXT,
+    Fld_PlaceOfSupply   TEXT,
+    Fld_FileStatus      TEXT,
+    fy                  TEXT,
+    month               TEXT,
+    gstin               TEXT
+);
+CREATE TABLE SPQRGstr1ExpZero (
+    Fld_Sequence              TEXT,
+    Fld_Type                  TEXT,
+    Fld_party                 TEXT,
+    Fld_InvoiceNo             TEXT,
+    Fld_InvoiceDate           TEXT,
+    Fld_InvoiceValue          TEXT,
+    Fld_PortCode              TEXT,
+    Fld_Shipingbill           TEXT,
+    Fld_Billdate              TEXT,
+    Fld_IGSTRate              TEXT,
+    Fld_IGSTInvoiceTaxableVal TEXT,
+    Fld_IGSTAmnt              TEXT,
+    Fld_CESS                  TEXT,
+    Fld_FileStatus            TEXT,
+    fy                        TEXT,
+    month                     TEXT,
+    gstin                     TEXT
+);
+
+
 CREATE TABLE SPQLast5Return (
     Fld_Return TEXT
 );
