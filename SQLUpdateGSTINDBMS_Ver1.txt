@@ -1,3 +1,10 @@
+CREATE TABLE SPQR3BDetailsOfSupplies
+(Fld_Id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+Fld_Sequence INTEGER,
+Fld_Description TEXT, Fld_TotalTaxableValue TEXT,
+Fld_IGST TEXT, Fld_CGST TEXT, Fld_SGST TEXT, Fld_CESS TEXT, Fld_Month TEXT, Fld_FileStatus Text, Fld_FinancialYear TEXT);
+
+
 CREATE TABLE SPQRGstr1B2b (
     Fld_Sequence          TEXT PRIMARY KEY
                                NOT NULL,
