@@ -1,3 +1,56 @@
+CREATE TABLE SPQCompanyAddressMaster (
+    Fld_Id             INTEGER PRIMARY KEY AUTOINCREMENT
+                               NOT NULL,
+    Fld_CompanyId      INTEGER,
+    Fld_GSTRNo         TEXT,
+    Fld_AddressType    TEXT,
+    Fld_BuildingFlatNo TEXT,
+    Fld_FloorNo        TEXT,
+    Fld_Premises       TEXT,
+    Fld_Road           TEXT,
+    Fld_City           TEXT,
+    Fld_District       TEXT,
+    Fld_Pincode        TEXT,
+    Fld_State          TEXT,
+    Fld_Email          TEXT,
+    Fld_Mobile         TEXT,
+    Fld_Phone          TEXT,
+    Fld_Fax            TEXT,
+    Fld_Nature         TEXT,
+    Fld_JsonAddress    TEXT
+);
+
+CREATE TABLE SPQCompanyMaster (
+    Fld_Id                    INTEGER PRIMARY KEY AUTOINCREMENT
+                                      NOT NULL,
+    Fld_GSTINUserName         TEXT,
+    Fld_GSTINPassword         TEXT,
+    Fld_GSTRNo                TEXT,
+    Fld_CompanyName           TEXT,
+    Fld_GroupCompany          TEXT,
+    Fld_TradeName             TEXT,
+    Fld_State                 TEXT,
+    Fld_CompanyType           TEXT,
+    Fld_ConName               TEXT,
+    Fld_ConDesig              TEXT,
+    Fld_ConEmail              TEXT,
+    Fld_ConMobileNo           TEXT,
+    Fld_RegDate               TEXT,
+    Fld_TypeOfReg             TEXT,
+    Fld_GSTR1                 TEXT,
+    Fld_ChangeRegType         TEXT,
+    Fld_UserID                TEXT,
+    Fld_InsertDate            TEXT,
+    Fld_UpdateDate            TEXT,
+    Fld_DeleteDate            TEXT,
+    Fld_IsDeleted             INTEGER,
+    Fld_FolderName            TEXT,
+    Fld_GstinDeactivationDate TEXT,
+    Fld_FileNo                TEXT,
+    Fld_Col1                  TEXT,
+    Fld_Col2                  TEXT
+);
+
 CREATE TABLE SPQR3BDetailsOfSupplies
 (Fld_Id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
 Fld_Sequence INTEGER,
