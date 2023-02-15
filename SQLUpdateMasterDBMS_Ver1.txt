@@ -1,7 +1,5 @@
 
-
 INSERT INTO SPQYearMaster(Fld_IsDeleted,Fld_FolderName,Fld_Year) select 0, '2022 - 2023','2022 - 2023' WHERE NOT EXISTS ( SELECT * FROM SPQYearMaster WHERE Fld_IsDeleted = 0 AND Fld_Year = '2022 - 2023');
-
 
 INSERT INTO SPQAssignCompany ( Fld_InsertDate,Fld_UpdateDate) select 'Agreed','EndUserLicenseAgreement' WHERE NOT EXISTS ( SELECT * FROM SPQAssignCompany WHERE  Fld_InsertDate = 'Agreed');
 
@@ -14,27 +12,10 @@ CREATE TABLE SpqTemplate (
 );
 
 
-DROP TABLE IF EXISTS SPQTaskReminder; 
 
-CREATE TABLE SPQTaskReminder (
-    Fld_Id               INTEGER PRIMARY KEY AUTOINCREMENT
-                                 NOT NULL,
-    Fld_LegalName        TEXT,
-    Fld_TradeName        TEXT,
-    Fld_NatureOfTask     TEXT,
-    Fld_StatusOfWork     TEXT,
-    Fld_FollowUpDate     TEXT,
-    Fld_Remarks          TEXT,
-    Fld_UserID           TEXT,
-    Fld_InsertDate       TEXT,
-    Fld_UpdateDate       TEXT,
-    Fld_DeleteDate       TEXT,
-    Fld_IsDeleted        INTEGER,
-    Fld_GST_Category     TEXT,
-    Fld_GSTIN            TEXT,
-    Fld_TaskCreatorGSTIN TEXT
-);
-
+alter table SPQTaskReminder add column  'Fld_GST_Category'                      TEXT;
+alter table SPQTaskReminder add column  'Fld_GSTIN'             		TEXT;
+alter table SPQTaskReminder add column  'Fld_TaskCreatorGSTIN'                 TEXT;
 
 
 alter table SPQCompanyMaster add column  'Fld_GstinDeactivationDate'  TEXT;
@@ -64,30 +45,87 @@ CREATE TABLE SPQMail_Credential (
     Fld_Blank_2                      TEXT
 );
 
-alter table SPQConnection add column 'IsWFH' BIT;
+CREATE TABLE SPQAuditLog (Id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, UserName TEXT, LoginId TEXT, PCName TEXT, LoggedCompany TEXT, GSTIN TEXT, State TEXT, LoginDateTime TEXT, LoginOutDateTime TEXT);
 
-INSERT INTO SPQYearMaster(Fld_IsDeleted,Fld_FolderName,Fld_Year) select 0, '2020 - 2021','2020 - 2021' WHERE NOT EXISTS ( SELECT * FROM SPQYearMaster WHERE Fld_IsDeleted = 0 AND Fld_Year = '2020 - 2021');
+CREATE TABLE SPQTurnoverReport (fy TEXT NOT NULL, gstin TEXT, Fld_CreatedDatetime TEXT,
+Fld_GSTINTurnover TEXT, Fld_PANTurnover TEXT, Fld_GSTR9Applicable TEXT, Fld_GSTR9CApplicable TEXT);
 
-CREATE TABLE SPQGSTR9CObservation (
-    Fld_Id            INTEGER PRIMARY KEY AUTOINCREMENT
-                              NOT NULL,
-    Fld_GSTIN         TEXT,
-    Fld_Party_Name    TEXT,
-    Certificate_type  TEXT,
-    qual_type         TEXT,
-    value             TEXT,
-    COl_1             TEXT,
-    COl_2             TEXT,
-    COl_3             TEXT,
-    COl_4             TEXT,
-    Fld_FinancialYear TEXT,
-    Fld_Month         TEXT
+CREATE TABLE SPQMail_Credential (
+    Fld_ID                           INTEGER      PRIMARY KEY AUTOINCREMENT,
+   Fld_GSTIN                        TEXT,
+   Fld_TradeName                    TEXT,
+   Fld_LegalName                    TEXT,
+   Fld_StateName                    TEXT,
+   Fld_DateofRegistration           TEXT,
+   Fld_TaxpayerType                 TEXT,
+   Fld_GSTIN_UIN_Status             TEXT,
+   Fld_ConstitutionofBuisnes        TEXT,
+   Fld_Effectivedate_of_Cancelation TEXT,
+   Fld_Address                      TEXT,
+   Fld_Mobile                       TEXT,
+   Fld_Email_ID                     TEXT,
+   Fld_Mailing_Date                 TEXT,
+   Fld_CC_Mail                      TEXT,
+   Fld_Blank_1                      TEXT,
+   Fld_Blank_2                      TEXT,
+   LastCheckDate                    VARCHAR (30),
+   FilingFrequency                  TEXT
 );
 
 
+PRAGMA foreign_keys = off;
+BEGIN TRANSACTION;
 
+-- Table: SPQStateMaster
+CREATE TABLE IF NOT EXISTS SPQStateMaster (
+    Stateid   INTEGER,
+  StateName VARCHAR (100),
+  StateCode VARCHAR (10),
+  Type      VARCHAR (10)
+);
+delete  from SPQStateMaster;
+INSERT INTO SPQStateMaster (Stateid, StateName, StateCode, Type) VALUES (1, 'Jammu And Kashmir', '01', 'State');
+INSERT INTO SPQStateMaster (Stateid, StateName, StateCode, Type) VALUES (2, 'Himachal Pradesh', '02', 'State');
+INSERT INTO SPQStateMaster (Stateid, StateName, StateCode, Type) VALUES (3, 'Punjab', '03', 'State');
+INSERT INTO SPQStateMaster (Stateid, StateName, StateCode, Type) VALUES (4, 'Chandigarh', '04', 'UT');
+INSERT INTO SPQStateMaster (Stateid, StateName, StateCode, Type) VALUES (5, 'Uttarakhand', '05', 'State');
+INSERT INTO SPQStateMaster (Stateid, StateName, StateCode, Type) VALUES (6, 'Haryana', '06', 'State');
+INSERT INTO SPQStateMaster (Stateid, StateName, StateCode, Type) VALUES (7, 'Delhi', '07', 'UT');
+INSERT INTO SPQStateMaster (Stateid, StateName, StateCode, Type) VALUES (8, 'Rajasthan', '08', 'State');
+INSERT INTO SPQStateMaster (Stateid, StateName, StateCode, Type) VALUES (9, 'Uttar Pradesh', '09', 'State');
+INSERT INTO SPQStateMaster (Stateid, StateName, StateCode, Type) VALUES (10, 'Bihar', '10', 'State');
+INSERT INTO SPQStateMaster (Stateid, StateName, StateCode, Type) VALUES (11, 'Sikkim', '11', 'State');
+INSERT INTO SPQStateMaster (Stateid, StateName, StateCode, Type) VALUES (12, 'Arunachal Pradesh', '12', 'State');
+INSERT INTO SPQStateMaster (Stateid, StateName, StateCode, Type) VALUES (13, 'Nagaland', '13', 'State');
+INSERT INTO SPQStateMaster (Stateid, StateName, StateCode, Type) VALUES (14, 'Manipur', '14', 'State');
+INSERT INTO SPQStateMaster (Stateid, StateName, StateCode, Type) VALUES (15, 'Mizoram', '15', 'State');
+INSERT INTO SPQStateMaster (Stateid, StateName, StateCode, Type) VALUES (16, 'Tripura', '16', 'State');
+INSERT INTO SPQStateMaster (Stateid, StateName, StateCode, Type) VALUES (17, 'Meghalaya', '17', 'State');
+INSERT INTO SPQStateMaster (Stateid, StateName, StateCode, Type) VALUES (18, 'Assam', '18', 'State');
+INSERT INTO SPQStateMaster (Stateid, StateName, StateCode, Type) VALUES (19, 'West Bengal', '19', 'State');
+INSERT INTO SPQStateMaster (Stateid, StateName, StateCode, Type) VALUES (20, 'Jharkhand', '20', 'State');
+INSERT INTO SPQStateMaster (Stateid, StateName, StateCode, Type) VALUES (21, 'Odisha', '21', 'State');
+INSERT INTO SPQStateMaster (Stateid, StateName, StateCode, Type) VALUES (22, 'Chhattisgarh', '22', 'State');
+INSERT INTO SPQStateMaster (Stateid, StateName, StateCode, Type) VALUES (23, 'Madhya Pradesh', '23', 'State');
+INSERT INTO SPQStateMaster (Stateid, StateName, StateCode, Type) VALUES (24, 'Gujarat', '24', 'State');
+INSERT INTO SPQStateMaster (Stateid, StateName, StateCode, Type) VALUES (25, 'Daman And Diu', '25', 'UT');
+INSERT INTO SPQStateMaster (Stateid, StateName, StateCode, Type) VALUES (26, 'Dadra and Nagar Haveli', '26', 'UT');
+INSERT INTO SPQStateMaster (Stateid, StateName, StateCode, Type) VALUES (27, 'Maharashtra', '27', 'State');
+INSERT INTO SPQStateMaster (Stateid, StateName, StateCode, Type) VALUES (28, 'Karnataka', '29', 'State');
+INSERT INTO SPQStateMaster (Stateid, StateName, StateCode, Type) VALUES (29, 'Goa', '30', 'State');
+INSERT INTO SPQStateMaster (Stateid, StateName, StateCode, Type) VALUES (30, 'Lakshadweep', '31', 'UT');
+INSERT INTO SPQStateMaster (Stateid, StateName, StateCode, Type) VALUES (31, 'Kerala', '32', 'State');
+INSERT INTO SPQStateMaster (Stateid, StateName, StateCode, Type) VALUES (32, 'Tamil Nadu', '33', 'State');
+INSERT INTO SPQStateMaster (Stateid, StateName, StateCode, Type) VALUES (33, 'Puducherry', '34', 'UT');
+INSERT INTO SPQStateMaster (Stateid, StateName, StateCode, Type) VALUES (34, 'Andaman And Nicobar', '35', 'UT');
+INSERT INTO SPQStateMaster (Stateid, StateName, StateCode, Type) VALUES (35, 'Telangana', '36', 'State');
+INSERT INTO SPQStateMaster (Stateid, StateName, StateCode, Type) VALUES (36, 'Andhra Pradesh', '37', 'State');
+INSERT INTO SPQStateMaster (Stateid, StateName, StateCode, Type) VALUES (37, 'Ladakh', '38', 'UT');
+INSERT INTO SPQStateMaster (Stateid, StateName, StateCode, Type) VALUES (38, 'Other Territory', '97', '');
+INSERT INTO SPQStateMaster (Stateid, StateName, StateCode, Type) VALUES (39, 'Other Country', '96', '');
 
-
+COMMIT TRANSACTION;
+PRAGMA foreign_keys = on;
 
 
 
