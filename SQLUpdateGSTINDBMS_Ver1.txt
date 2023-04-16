@@ -1,3 +1,68 @@
+CREATE TABLE SPQNotification_Master (
+    notify_id   INTEGER       PRIMARY KEY AUTOINCREMENT,
+   Box         VARCHAR (2),
+   posted      INTEGER (2),
+   Name        TEXT,
+   cptype      TEXT,
+   notiftyp    TEXT,
+   cpgstin     TEXT,
+   trdnm       TEXT,
+   subject     TEXT,
+   Remarks     TEXT,
+   NotifNo     TEXT,
+   notifDate   VARCHAR (20),
+   atta_type   TEXT,
+   atta_ref_no TEXT,
+   atta_name   TEXT,
+   atta_from   TEXT,
+   att_file    VARCHAR (300)
+);
+CREATE TABLE SPQNotification_Details (
+    id             INTEGER      PRIMARY KEY AUTOINCREMENT,
+   notify_id      INTEGER      CONSTRAINT FK_SPQNotifMaster REFERENCES SPQNotification_Master (notify_id) ON DELETE CASCADE,
+   ActionRequired TEXT,
+   doctype        TEXT,
+   docnum         TEXT,
+   docdate        TEXT,
+   docvalue       TEXT,
+   POS            TEXT,
+   inv_typ        TEXT,
+   rchrg          BOOLEAN,
+   rcm            VARCHAR (30),
+   rate           VARCHAR (10),
+   taxvalue       DECIMAL,
+   igst           DECIMAL,
+   cgst           DECIMAL,
+   sgst           DECIMAL,
+   cess           DECIMAL
+);
+CREATE TABLE SPQDRC03Payments (
+    PId            INTEGER       PRIMARY KEY AUTOINCREMENT,
+   GSTIN          VARCHAR (50),
+   CauseOfPayment VARCHAR (100),
+   PaymentDate    VARCHAR (20),
+   SectionNo      VARCHAR (100),
+   FY             VARCHAR (20),
+   status         VARCHAR (30)
+);
+CREATE TABLE SPQDRC03PaymentDetails (
+    PId           INTEGER       PRIMARY KEY AUTOINCREMENT,
+   Info_FKey     INTEGER       REFERENCES SPQDRC03Payments (PId) ON DELETE CASCADE,
+   From_Month    VARCHAR (20),
+   From_Year     INTEGER,
+   To_Month      VARCHAR (20),
+   To_Year       INTEGER,
+   PaymentType   VARCHAR (5),
+   PlaceOfSupply VARCHAR (100),
+   Liability     VARCHAR (100),
+   Tax           INTEGER,
+   Interest      INTEGER,
+   Penalty       INTEGER,
+   Total         INTEGER
+);
+alter table SPQR2Form4 add   Fld_BranchCode text null;
+alter table SPQR2Form7Other add   Fld_BranchCode text null;
+
 alter table SPQR2ACND add   Fld_POS text null;
 alter table SPQR2ACNDAmend add   Fld_POS text null;
 alter table SPQR2BCDNR add   Fld_POS text null;
