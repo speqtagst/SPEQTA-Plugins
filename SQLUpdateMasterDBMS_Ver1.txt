@@ -76,7 +76,7 @@ CREATE TABLE SPQMail_Credential (
 PRAGMA foreign_keys = off;
 BEGIN TRANSACTION;
 
--- Table: SPQStateMaster
+
 CREATE TABLE IF NOT EXISTS SPQStateMaster (
     Stateid   INTEGER,
   StateName VARCHAR (100),
