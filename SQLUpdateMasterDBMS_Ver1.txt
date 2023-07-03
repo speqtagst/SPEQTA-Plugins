@@ -1,3 +1,5 @@
+alter table SPQMail_Credential add column  'LastCheckDate'  VARCHAR (30);
+ alter table SPQMail_Credential add column 'FilingFrequency'      TEXT;
 
 INSERT INTO SPQYearMaster(Fld_IsDeleted,Fld_FolderName,Fld_Year) select 0, '2023 - 2024','2023 - 2024' WHERE NOT EXISTS ( SELECT * FROM SPQYearMaster WHERE Fld_IsDeleted = 0 AND Fld_Year = '2023 - 2024');
 
