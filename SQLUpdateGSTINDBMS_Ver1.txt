@@ -1,3 +1,6 @@
+alter table SPQDRC03Payments add column 'Place'                 TEXT;
+alter table SPQDRC03Payments add column 'Reason'                 TEXT;
+
 CREATE TABLE SPQLibilitySetoff (    Fld_Month   VARCHAR (20),    Fld_Fy      VARCHAR (30),    Fld_TaxType VARCHAR (10),    Fld_IGST    DOUBLE,    Fld_CGST    DOUBLE,    Fld_SGST   DOUBLE,    Fld_CESS    DOUBLE);
 alter table SPQGSTPortalReports add   E_IGST          NUMERIC (18, 2) ;
  alter table SPQGSTPortalReports add   E_CGST          NUMERIC (18, 2);
