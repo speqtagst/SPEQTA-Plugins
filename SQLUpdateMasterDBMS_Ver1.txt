@@ -1,4 +1,4 @@
-alter table SPQCompanyMaster add column  'Fld_DeviceId'  VARCHAR (30);
+alter table SPQCompanyMaster add column  'Fld_DeviceId'  VARCHAR (300);
 
 alter table SPQMail_Credential add column  'LastCheckDate'  VARCHAR (30);
  alter table SPQMail_Credential add column 'FilingFrequency'      TEXT;
