@@ -1,3 +1,6 @@
+delete from SPQGSTR9CAllTableDescription where Fld_Id=107 ;
+
+INSERT INTO SPQGSTR9CAllTableDescription (      Fld_HeaderGroup,       Fld_Type,   Fld_Description,     Fld_ParameterName,       Fld_SrNo,   Fld_Id   )    VALUES (      'Table-9',            NULL,'6%',         '6',          'B1',            107     );
 delete from SPQGSTR9CAllTableDescription where Fld_Id=106 ;
 
 INSERT INTO SPQGSTR9CAllTableDescription (      Fld_HeaderGroup,       Fld_Type,   Fld_Description,     Fld_ParameterName,       Fld_SrNo,   Fld_Id   )    VALUES (      'Table-9',            NULL,'Others%',         'Others',          'K1',            106     );
