@@ -1,3 +1,5 @@
+CREATE TABLE SPQR1ECommerce (    Fld_Id            INTEGER PRIMARY KEY AUTOINCREMENT                             NOT NULL,    Fld_Sequence     TEXT,    Fld_GSTIN    TEXT,    Fld_TradeName     TEXT,    Fld_Rcm         TEXT,    Fld_Rate         TEXT,    Fld_Taxable     TEXT,    Fld_IGSTAmnt     TEXT,    Fld_CGSTAmnt     TEXT,    Fld_SGSTAmnt     TEXT,    Fld_CessAmnt     TEXT,    Fld_Month         TEXT,    Fld_FinancialYear TEXT,    Fld_Flag);
+
 alter table SPQR1EINVCB2B add column 'Fld_RecoStatus'                 TEXT;
 alter table SPQR1EINVCDNR add column 'Fld_RecoStatus'                 TEXT;
 alter table SPQR1EINVCDUNR add column 'Fld_RecoStatus'                 TEXT;
