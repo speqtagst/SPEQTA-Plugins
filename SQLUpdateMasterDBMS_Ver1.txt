@@ -5,6 +5,8 @@ alter table SPQMail_Credential add column  'LastCheckDate'  VARCHAR (30);
 
 INSERT INTO SPQYearMaster(Fld_IsDeleted,Fld_FolderName,Fld_Year) select 0, '2023 - 2024','2023 - 2024' WHERE NOT EXISTS ( SELECT * FROM SPQYearMaster WHERE Fld_IsDeleted = 0 AND Fld_Year = '2023 - 2024');
 
+INSERT INTO SPQYearMaster(Fld_IsDeleted,Fld_FolderName,Fld_Year) select 0, '2024 - 2025','2024 - 2025' WHERE NOT EXISTS ( SELECT * FROM SPQYearMaster WHERE Fld_IsDeleted = 0 AND Fld_Year = '2024 - 2025');
+
 INSERT INTO SPQAssignCompany ( Fld_InsertDate,Fld_UpdateDate) select 'Agreed','EndUserLicenseAgreement' WHERE NOT EXISTS ( SELECT * FROM SPQAssignCompany WHERE  Fld_InsertDate = 'Agreed');
 
 CREATE TABLE SpqTemplate (
