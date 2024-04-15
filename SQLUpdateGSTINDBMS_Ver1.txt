@@ -15,7 +15,7 @@ CREATE TABLE SPQR1ECommerce (    Fld_Id            INTEGER PRIMARY KEY AUTOINCRE
 alter table SPQR1EINVCB2B add column 'Fld_RecoStatus'                 TEXT;
 alter table SPQR1EINVCDNR add column 'Fld_RecoStatus'                 TEXT;
 alter table SPQR1EINVCDUNR add column 'Fld_RecoStatus'                 TEXT;
-alter table SPQR1EINVEXP add column 'Fld_RecoStatus'                 TEXT;
+alter table SPQR1EINVEXP    add column 'Fld_RecoStatus'                 TEXT;
 delete from SPQGSTR9CAllTableDescription where Fld_Id=107 ;
 
 INSERT INTO SPQGSTR9CAllTableDescription (      Fld_HeaderGroup,       Fld_Type,   Fld_Description,     Fld_ParameterName,       Fld_SrNo,   Fld_Id   )    VALUES (      'Table-9',            NULL,'6%',         '6',          'B1',            107     );
