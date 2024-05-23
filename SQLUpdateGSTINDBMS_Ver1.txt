@@ -1,3 +1,8 @@
+alter table SPQTurnoverReport add column  'Fld_Fiingdate'  VARCHAR (300);
+alter table SPQCompanyMaster add column  'Fld_DeviceId'  VARCHAR (300);
+
+alter table SPQMail_Credential add column  'LastCheckDate'  VARCHAR (30);
+ alter table SPQMail_Credential add column 'FilingFrequency'      TEXT;
 CREATE TABLE SPQ3bSummary (
     Fld_Sequence     INTEGER,
     Fld_GSTIN         TEXT,
