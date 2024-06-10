@@ -1,3 +1,21 @@
+CREATE TABLE SPQR1EWBB2CL (
+    Fld_id            INTEGER     PRIMARY KEY AUTOINCREMENT
+                                 NOT NULL,
+    Fld_Sequence     INTEGER,
+    Fld_Invcdt        STRING,
+    Fld_invcnum     VARCHAR (20),
+    Fld_Pos         TEXT,
+    Fld_Invcval     DOUBLE,
+    Fld_numofitm     INTEGER,
+    Fld_txval         DOUBLE,
+    Fld_rt            DOUBLE,
+    Fld_iamt         DOUBLE,
+    Fld_csamt         DOUBLE,
+    Fld_ComapanyGstin VARCHAR (20),
+    Fld_Month         VARCHAR (20),
+    Fld_FinancialYear VARCHAR (20)
+);
+
 alter table SPQTurnoverReport add column  'Fld_Fiingdate'  VARCHAR (300);
 alter table SPQCompanyMaster add column  'Fld_DeviceId'  VARCHAR (300);
 
