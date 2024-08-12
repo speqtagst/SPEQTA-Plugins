@@ -1,3 +1,42 @@
+CREATE TABLE SPQECreditRevershalandReclaimLedger(
+    Fld_Id             INTEGER PRIMARY KEY AUTOINCREMENT
+                                NOT NULL,
+    Fld_Sequence        TEXT,
+    Fld_Date            TEXT,
+    Fld_ReferenceNo     TEXT,
+    Fld_TaxPeriod     TEXT,
+    Fld_Description     TEXT,
+    Fld_TransactionType TEXT,
+    
+    Fld_ITCClaimIGST     TEXT,
+    Fld_ITCClaimCGST     TEXT,
+    Fld_ITCClaimSGST     TEXT,
+    Fld_ITCClaimCESS     TEXT,
+    Fld_ITCClaimTOTAL     TEXT,
+    
+    Fld_ITCReversalIGST     TEXT,
+    Fld_ITCReversalCGST     TEXT,
+    Fld_ITCReversalSGST     TEXT,
+    Fld_ITCReversalCESS     TEXT,
+    Fld_ITCReversalTOTAL    TEXT,
+    
+    Fld_ITCReclaimedIGST     TEXT,
+    Fld_ITCReclaimedCGST     TEXT,
+    Fld_ITCReclaimedSGST     TEXT,
+    Fld_ITCReclaimedCESS     TEXT,
+    Fld_ITCReclaimedTOTAL    TEXT,
+    
+    Fld_ClosingBalanceIGST     TEXT,
+    Fld_ClosingBalanceCGST     TEXT,
+    Fld_ClosingBalanceSGST     TEXT,
+    Fld_ClosingBalanceCESS     TEXT,
+    Fld_ClosingBalanceTOTAL    TEXT,
+    
+
+    Fld_Month         TEXT,
+    Fld_FinancialYear TEXT
+);
+
 CREATE TABLE SPQR1EWBB2CL (
     Fld_id            INTEGER     PRIMARY KEY AUTOINCREMENT
                                  NOT NULL,
