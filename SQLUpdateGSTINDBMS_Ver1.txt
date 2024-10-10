@@ -133,6 +133,24 @@ ALTER TABLE SPQR2BCDNR ADD COLUMN Fld_Irn TEXT;
 ALTER TABLE SPQR2BCDNR ADD COLUMN Fld_IrnDate TEXT;
 ALTER TABLE SPQR2BCDNR ADD COLUMN Fld_Source TEXT;
 
+CREATE TABLE SPQR1ECommerce (
+                                Fld_Id              INTEGER PRIMARY KEY AUTOINCREMENT
+                                                    NOT NULL,   
+                                Fld_Sequence        TEXT,
+                                Fld_GSTIN           TEXT,   
+                                Fld_TradeName       TEXT,
+                                Fld_Rcm             TEXT,    
+                                Fld_Rate            TEXT,
+                                Fld_Taxable         TEXT,
+                                Fld_IGSTAmnt        TEXT,
+                                Fld_CGSTAmnt        TEXT,
+                                Fld_SGSTAmnt        TEXT,
+                                Fld_CessAmnt        TEXT,   
+                                Fld_Month           TEXT,
+                                Fld_FinancialYear   TEXT,
+                                Fld_Flag            TEXT
+                                );
+
 
 CREATE TABLE SPQR3BDetailsOfSupplies
 (Fld_Id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
