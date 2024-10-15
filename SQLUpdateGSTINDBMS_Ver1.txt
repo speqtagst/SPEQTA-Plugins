@@ -1,6 +1,40 @@
 PRAGMA foreign_keys = off;
 BEGIN TRANSACTION;
 
+CREATE TABLE SPQECreditRevershalandReclaimLedger (
+    Fld_Id                 INTEGER PRIMARY KEY AUTOINCREMENT
+                                    NOT NULL,
+    Fld_Sequence            TEXT,
+    Fld_Date                TEXT,
+    Fld_ReferenceNo         TEXT,
+    Fld_TaxPeriod         TEXT,
+    Fld_Description         TEXT,
+    Fld_TransactionType     TEXT,
+    Fld_ITCClaimIGST        TEXT,
+    Fld_ITCClaimCGST        TEXT,
+    Fld_ITCClaimSGST        TEXT,
+    Fld_ITCClaimCESS        TEXT,
+    Fld_ITCClaimTOTAL     TEXT,
+    Fld_ITCReversalIGST     TEXT,
+    Fld_ITCReversalCGST     TEXT,
+    Fld_ITCReversalSGST     TEXT,
+    Fld_ITCReversalCESS     TEXT,
+    Fld_ITCReversalTOTAL    TEXT,
+    Fld_ITCReclaimedIGST    TEXT,
+    Fld_ITCReclaimedCGST    TEXT,
+    Fld_ITCReclaimedSGST    TEXT,
+    Fld_ITCReclaimedCESS    TEXT,
+    Fld_ITCReclaimedTOTAL TEXT,
+    Fld_ClosingBalanceIGST TEXT,
+    Fld_ClosingBalanceCGST TEXT,
+    Fld_ClosingBalanceSGST TEXT,
+    Fld_ClosingBalanceCESS TEXT,
+    Fld_ClosingBalanceTOTAL TEXT,
+    Fld_Month             TEXT,
+    Fld_FinancialYear     TEXT
+);
+
+
 DROP TABLE IF EXISTS SPQR2BSummary_ISOSchema;
 CREATE TABLE IF NOT EXISTS SPQR2BSummary_ISOSchema (Fld_Id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, Fld_Sequence TEXT, Fld_Part TEXT, Fld_Heading TEXT, Fld_GSTR3BTable TEXT, Fld_itcavl TEXT, Fld_rev TEXT, Fld_igst TEXT, Fld_cgst TEXT, Fld_sgst TEXT, Fld_cess TEXT, Fld_Advisory TEXT, Fld_Month TEXT, Fld_FinancialYear TEXT, Fld_Gstr3BFilingDate TEXT, Col_1 TEXT, Col_2 TEXT, Col_3 TEXT, Col_4 TEXT);
 INSERT INTO SPQR2BSummary_ISOSchema (Fld_Id, Fld_Sequence, Fld_Part, Fld_Heading, Fld_GSTR3BTable, Fld_itcavl, Fld_rev, Fld_igst, Fld_cgst, Fld_sgst, Fld_cess, Fld_Advisory, Fld_Month, Fld_FinancialYear, Fld_Gstr3BFilingDate, Col_1, Col_2, Col_3, Col_4) VALUES (1, '1', 'PA-1', 'All other ITC - Supplies from registered persons other than reverse charge', '4(A)(5)', 'Yes', NULL, NULL, NULL, NULL, NULL, 'Net input tax credit may be availed under Table 4(A)(5) of FORM GSTR-3B.', '', '', NULL, NULL, NULL, NULL, NULL);
