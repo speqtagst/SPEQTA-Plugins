@@ -1,3 +1,80 @@
+CREATE TABLE SPQR2BEcomm (
+    Fld_Id            INTEGER PRIMARY KEY AUTOINCREMENT
+                              NOT NULL,
+    Fld_GSTIN         TEXT,
+    Fld_supfildt      TEXT,
+    Fld_supprd        TEXT,
+    Fld_trdnm         TEXT,
+    Fld_diffprcnt     TEXT,
+    Fld_dt            TEXT,
+    Fld_inum          TEXT,
+    Fld_itcavl        TEXT,
+    Fld_pos           TEXT,
+    Fld_rev           TEXT,
+    Fld_rsn           TEXT,
+    Fld_typ           TEXT,
+    Fld_val           TEXT,
+    Fld_cess          TEXT,
+    Fld_cgst          TEXT,
+    Fld_igst          TEXT,
+    Fld_num           TEXT,
+    Fld_rt            TEXT,
+    Fld_sgst          TEXT,
+    Fld_txval         TEXT,
+    Fld_Month         TEXT,
+    Fld_FinancialYear TEXT,
+    Fld_Sequence      TEXT,
+    Col_1             TEXT,
+    Fld_Irn           TEXT,
+    Fld_IrnDate       TEXT,
+    Fld_Source        TEXT
+);
+
+
+CREATE TABLE SPQR2BEcommAmend (
+    Fld_Id            INTEGER PRIMARY KEY AUTOINCREMENT
+                              NOT NULL,
+    Fld_GSTIN         TEXT,
+    Fld_supfildt      TEXT,
+    Fld_supprd        TEXT,
+    Fld_trdnm         TEXT,
+    Fld_diffprcnt     TEXT,
+    Fld_dt            TEXT,
+    Fld_inum          TEXT,
+    Fld_itcavl        TEXT,
+    Fld_pos           TEXT,
+    Fld_rev           TEXT,
+    Fld_rsn           TEXT,
+    Fld_typ           TEXT,
+    Fld_val           TEXT,
+    Fld_cess          TEXT,
+    Fld_cgst          TEXT,
+    Fld_igst          TEXT,
+    Fld_num           TEXT,
+    Fld_rt            TEXT,
+    Fld_sgst          TEXT,
+    Fld_txval         TEXT,
+    Fld_Month         TEXT,
+    Fld_FinancialYear TEXT,
+    Fld_Sequence      TEXT,
+    Col_1             TEXT,
+    Fld_Irn           TEXT,
+    Fld_IrnDate       TEXT,
+    Fld_Source        TEXT
+);
+
+
+
+
+ALTER TABLE SPQR2BB2B ADD COLUMN Fld_Irn TEXT;
+ALTER TABLE SPQR2BB2B ADD COLUMN Fld_IrnDate TEXT;
+ALTER TABLE SPQR2BB2B ADD COLUMN Fld_Source TEXT;
+
+ALTER TABLE SPQR2BCDNR ADD COLUMN Fld_Irn TEXT;
+ALTER TABLE SPQR2BCDNR ADD COLUMN Fld_IrnDate TEXT;
+ALTER TABLE SPQR2BCDNR ADD COLUMN Fld_Source TEXT;
+
+
 CREATE TABLE SPQECreditRevershalandReclaimLedger(
     Fld_Id             INTEGER PRIMARY KEY AUTOINCREMENT
                                 NOT NULL,
