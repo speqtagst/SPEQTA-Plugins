@@ -1,3 +1,7 @@
+delete from SPQGSTR9AllTableDescription where Fld_Id in(130,131,132);
+ 
+INSERT INTO SPQGSTR9AllTableDescription ( Fld_HeaderGroup,  Fld_Type,Fld_Description,     Fld_SrNo,   Fld_Id     )  VALUES ( 'PtII-4', NULL,                                        'Supplies on which e-commerce operator is required to pay tax as per section 9(5) (including amendments, if any)[E-commerce operator to report] ','G1', 130),                   ('PtII-4',  NULL,'Sub-total (A to G1 above)', 'H', 131),( 'PtII-5', NULL, 'Supplies on which tax is to be paid by e-commerce operators as persection 9(5) [Supplier to report]', 'C1', 132 );
+
 PRAGMA foreign_keys = off;
 BEGIN TRANSACTION;
 
@@ -157,6 +161,13 @@ CREATE TABLE SPQR2BEcommAmend (
 );
 
 
+
+delete from SPQGSTR9CAllTableDescription where Fld_Id=107 ;
+
+INSERT INTO SPQGSTR9CAllTableDescription (      Fld_HeaderGroup,       Fld_Type,   Fld_Description,     Fld_ParameterName,       Fld_SrNo,   Fld_Id   )    VALUES (      'Table-9',            NULL,'6%',         '6',          'B1',            107     );
+delete from SPQGSTR9CAllTableDescription where Fld_Id=106 ;
+
+INSERT INTO SPQGSTR9CAllTableDescription (      Fld_HeaderGroup,       Fld_Type,   Fld_Description,     Fld_ParameterName,       Fld_SrNo,   Fld_Id   )    VALUES (      'Table-9',            NULL,'Others%',         'Others',          'K1',            106     );
 
 
 ALTER TABLE SPQR2BB2B ADD COLUMN Fld_Irn TEXT;
