@@ -1,0 +1,441 @@
+[{
+    "LinkText": "GST Portal Home Page",
+	"StatusBarText": "Opening GST Home Page....",
+	"Url": "https://services.gst.gov.in/services/auth/fowelcome",
+	 "Header": "1. GST Dashboard"
+},
+{
+    "LinkText": "GST Portal Dashboard",
+	"StatusBarText": "Opening Portal Dashboard Page....",
+	"Url": "https://services.gst.gov.in/services/auth/dashboard",
+	 "Header": "1. GST Dashboard"
+},
+
+{
+    "LinkText": "Return Dashboard",
+	"StatusBarText": "Opening Filing Dashboard Page....",
+	"Url": "https://return.gst.gov.in/returns/auth/dashboard",
+	 "Header": "1. GST Dashboard"
+},
+
+{
+    "LinkText": "Create Challan",
+	"StatusBarText": "Opening Challan Page....",
+	"Url": "https://payment.gst.gov.in/payment/auth/",
+	 "Header": "1. GST Dashboard"
+},
+
+{
+    "LinkText": "View Notice(s) and Order(s)",
+	"StatusBarText": "Opening View Notice and Orders Page....",
+	"Url": "https://services.gst.gov.in/services/auth/notices",
+	 "Header": "1. GST Dashboard"
+},
+
+{
+    "LinkText": "Annual Return",
+	"StatusBarText": "Opening Annaul Returns Page....",
+	"Url": "https://return.gst.gov.in/returns2/auth/annualreturn",
+	 "Header": "1. GST Dashboard"
+},
+
+{
+    "LinkText": "Check Cash Balance",
+	"StatusBarText": "Opening Annaul Returns Page....",
+	"Url": "https://payment.gst.gov.in/payment/auth/ledger/cashledger",
+	 "Header": "1. GST Dashboard"
+},
+
+{
+    "LinkText": "ITC Reversal & Reclaim Statement",
+	"StatusBarText": "Opening Annaul Returns Page....",
+	"Url": "https://return.gst.gov.in/returns/auth/ledger/revreclaimstmt",
+	 "Header": "1. GST Dashboard"
+},
+
+
+{
+    "LinkText": "Liability Ledger",
+	"StatusBarText": "Opening Annaul Returns Page....",
+	"Url": "https://return.gst.gov.in/returns/auth/ledger/taxledger",
+	 "Header": "1. GST Dashboard"
+},
+
+
+{
+    "LinkText": "Electronic Credit Ledger",
+	"StatusBarText": "Opening Annaul Returns Page....",
+	"Url": "https://return.gst.gov.in/returns/auth/ledger/itcledger",
+	 "Header": "1. GST Dashboard"
+},
+
+{
+    "LinkText": "Application for Filing Clarifications",
+	"StatusBarText": "Opening Application for Clarifications Page....",
+	"Url": "https://reg.gst.gov.in/registration/auth/clarifications",
+	 "Header": "2. Registration"
+},
+
+{
+    "LinkText": "Geocoding Business Addresses",
+	"StatusBarText": "Opening Geocoding Business Page....",
+	"Url": "https://reg.gst.gov.in/registration/auth/geocode",
+	 "Header": "2. Registration"
+},
+
+{
+    "LinkText": "Amendment of Registration(Non-Core Fields)",
+	"StatusBarText": "Opening Amendment Non-Core Fields Page....",
+	"Url": "https://reg.gst.gov.in/registration/auth/amend/noncore/business",
+	 "Header": "2. Registration"
+},
+
+{
+    "LinkText": "Amendment of Registration Core Fields",
+	"StatusBarText": "Opening Amendment Core Fields Page....",
+	"Url": "https://reg.gst.gov.in/registration/auth/amend/core/amendbusinessdetail",
+	 "Header": "2. Registration"
+},
+
+{
+    "LinkText": "Application to Opt for composition Levy",
+	"StatusBarText": "Opening Application Composition Levy Page....",
+	"Url": "https://reg.gst.gov.in/registration/auth/optcomp",
+	 "Header": "2. Registration"
+},
+
+{
+    "LinkText": "Application for Withdrawal from Composition Levy",
+	"StatusBarText": "Opening Withdrawal of Composition Levy Page....",
+	"Url": "https://reg.gst.gov.in/registration/auth/wtdrwcomp",
+	 "Header": "2. Registration"
+},
+
+{
+    "LinkText": "Track Application Status",
+	"StatusBarText": "Opening Track Application Status Page....",
+	"Url": "https://services.gst.gov.in/services/auth/appstatus",
+	 "Header": "2. Registration"
+},
+
+
+{
+    "LinkText": "Application For Cancellation of Registration",
+	"StatusBarText": "Opening Application to Opt for composition Levy Page....",
+	"Url": "https://reg.gst.gov.in/registration/auth/newappl/cancellation/basicdetails",
+	 "Header": "2. Registration"
+},
+
+{
+    "LinkText": "Returns Dashboard",
+	"StatusBarText": "Opening Returns Dashboard Page....",
+	"Url": "https://return.gst.gov.in/returns/auth/dashboard",
+	 "Header": "3. Returns"
+},
+
+{
+    "LinkText": "View Filed Returns",
+	"StatusBarText": "Opening View Filed Returns Page....",
+	"Url": "https://return.gst.gov.in/returns/auth/efiledReturns",
+	 "Header": "3. Returns"
+},
+
+{
+    "LinkText": "Track Return Status",
+	"StatusBarText": "Opening Track Returns Status Page....",
+	"Url": "https://return.gst.gov.in/returns/auth/trackreturnstatus",
+	 "Header": "3. Returns"
+},
+
+{
+    "LinkText": "Transition Forms",
+	"StatusBarText": "Opening Transition Forms Page....",
+	"Url": "https://return.gst.gov.in/returns/auth/transition/trans1",
+	 "Header": "3. Returns"
+},
+
+{
+    "LinkText": "ITC Forms",
+	"StatusBarText": "Opening ITC Forms Page....",
+	"Url": "https://return.gst.gov.in/returns2/auth/itcform/links",
+	 "Header": "3. Returns"
+},
+
+{
+    "LinkText": "Annual Return",
+	"StatusBarText": "Opening Annaul Returns Page....",
+	"Url": "https://return.gst.gov.in/returns2/auth/annualreturn",
+	 "Header": "3. Returns"
+},
+
+{
+    "LinkText": "TDS and TCS credit received",
+	"StatusBarText": "Opening TDS/TCS Credit Page....",
+	"Url": "https://return.gst.gov.in/returns2/auth/comptds",
+	 "Header": "3. Returns"
+},
+
+{
+    "LinkText": "Tax liabilities and ITC comparison",
+	"StatusBarText": "Opening Tax liabilities and ITC comparison Page....",
+	"Url": "https://return.gst.gov.in/returns/auth/comparison",
+	 "Header": "3. Returns"
+},
+
+{
+    "LinkText": "Opt-in for Quarterly Return",
+	"StatusBarText": "Opening Opt-in for Quarterly Return....",
+	"Url": "https://return.gst.gov.in/returns/auth/managertnprofile",
+	 "Header": "3. Returns"
+},
+
+{
+    "LinkText": "Return Compliance",
+	"StatusBarText": "Opening Return Compliance Page....",
+	"Url": "https://return.gst.gov.in/returns/auth/returnComp",
+	 "Header": "3. Returns"
+},
+
+{
+    "LinkText": "Liability Mismatch (DRC-01B)",
+	"StatusBarText": "Opening Liability Mismatch (DRC-01B) Page....",
+	"Url": "https://return.gst.gov.in/returns/auth/drc01b",
+	 "Header": "3. Returns"
+},
+
+{
+    "LinkText": "ITC Mismatch (DRC-01C)",
+	"StatusBarText": "Opening ITC Mismatch (DRC-01C) Page....",
+	"Url": "https://return.gst.gov.in/returns/auth/drc01c",
+	 "Header": "3. Returns"
+},
+
+{
+    "LinkText": "Create Challan",
+	"StatusBarText": "Opening Create Challan Page....",
+	"Url": "https://payment.gst.gov.in/payment/auth/challanreason",
+	 "Header": "4. Payments"
+},
+
+{
+    "LinkText": "Saved Challan",
+	"StatusBarText": "Opening Saved Challan Page....",
+	"Url": "https://payment.gst.gov.in/payment/auth/savedchallan",
+	 "Header": "4. Payments"
+},
+
+{
+    "LinkText": "Challan History",
+	"StatusBarText": "Opening Challan History Page....",
+	"Url": "https://payment.gst.gov.in/payment/auth/challanhistory",
+	 "Header": "4. Payments"
+},
+
+{
+    "LinkText": "Application for Deferred Payment/Payment in Instalments",
+	"StatusBarText": "Opening Deferred Payment Page....",
+	"Url": "https://services.gst.gov.in/litserv/auth/deferred/instalmentpayment",
+	 "Header": "4. Payments"
+},
+
+{
+    "LinkText": "Instalment Calendar",
+	"StatusBarText": "Opening Instalment Calendar Page....",
+	"Url": "https://payment.gst.gov.in/payment/auth/ledger/instalmentcalendar",
+	 "Header": "4. Payments"
+},
+
+{
+    "LinkText": "Grievance against Payment(GST PMT-07)",
+	"StatusBarText": "Opening Payment Grievance Page....",
+	"Url": "https://services.gst.gov.in/services/auth/grievance",
+	 "Header": "4. Payments"
+},
+
+{
+    "LinkText": "My Saved Applications",
+	"StatusBarText": "Opening My Saved Applications Page....",
+	"Url": "https://services.gst.gov.in/services/auth/savedapp",
+	 "Header": "5. User Services"
+},
+
+{
+    "LinkText": "My Applications",
+	"StatusBarText": "Opening My Applications Page....",
+	"Url": "https://services.gst.gov.in/litserv/auth/case/search",
+	 "Header": "5. User Services"
+},
+
+{
+    "LinkText": "Appeal to Appellate Authority",
+	"StatusBarText": "Opening ALP-01 Appeal Page....",
+	"Url": "https://services.gst.gov.in/litserv/auth/getappealform",
+	 "Header": "6. My Applications"
+},
+
+{
+    "LinkText": "Advance Ruling Application",
+	"StatusBarText": "Opening Advance Ruling Application Page....",
+	"Url": "https://services.gst.gov.in/litserv/auth/ar/payment",
+	 "Header": "6. My Applications"
+},
+
+{
+    "LinkText": "Intimation Of Voluntary Payment DRC-03",
+	"StatusBarText": "Opening DRC-03 Filing Page....",
+	"Url": "https://services.gst.gov.in/litserv/auth/intimationofvolpayment",
+	 "Header": "6. My Applications"
+},
+
+{
+    "LinkText": "Furnish Letter of Undertaking (LUT)",
+	"StatusBarText": "Opening LUT Filing Page....",
+	"Url": "https://services.gst.gov.in/services2/auth/getlutform",
+	 "Header": "6. My Applications"
+},
+
+{
+    "LinkText": "Refund Application",
+	"StatusBarText": "Opening Refund Application Page....",
+	"Url": "https://refund.gst.gov.in/refunds/auth/refunddashboard",
+	 "Header": "6. My Applications"
+},
+
+{
+    "LinkText": "Rectification of Order",
+	"StatusBarText": "Opening Rectification of Order Page....",
+	"Url": "https://services.gst.gov.in/litserv/auth/rectificationoforder",
+	 "Header": "6. My Applications"
+},
+
+{
+    "LinkText": "Restoration of Provisional Attachments",
+	"StatusBarText": "Opening Restoration of Provisional Attachments Page....",
+	"Url": "https://services.gst.gov.in/litserv/auth/adj/restorationorder",
+	 "Header": "6. My Applications"
+},
+
+{
+    "LinkText": "Provisional Assesment ASMT-01",
+	"StatusBarText": "Opening Provisional Assessment Page....",
+	"Url": "https://services.gst.gov.in/litserv/auth/adj/restorationorder",
+	 "Header": "6. My Applications"
+},
+
+{
+    "LinkText": "Compounding Application",
+	"StatusBarText": "Opening Compounding Application Page....",
+	"Url": "https://services.gst.gov.in/litserv/auth/comp/compForm",
+	 "Header": "6. My Applications"
+},
+
+{
+    "LinkText": "Unblocking E-way Bill",
+	"StatusBarText": "Opening Unblock E-way Bill Page....",
+	"Url": "https://services.gst.gov.in/litserv/auth/ewb/unblock",
+	 "Header": "6. My Applications"
+},
+
+{
+    "LinkText": "View/Download Certificates",
+	"StatusBarText": "Opening View/Download Certificates Page....",
+	"Url": "https://services.gst.gov.in/services/auth/certs",
+	 "Header": "5. User Services"
+},
+
+{
+    "LinkText": "View Notices & Orders",
+	"StatusBarText": "Opening Notices & Orders Page....",
+	"Url": "https://services.gst.gov.in/services/auth/notices",
+	 "Header": "7. Notice & Orders"
+},
+
+{
+    "LinkText": "Additional Notices & Orders",
+	"StatusBarText": "Opening Additional Notices & Orders Page....",
+	"Url": "https://services.gst.gov.in/litserv/auth/viewadnlntcord",
+	 "Header": "7. Notice & Orders"
+},
+
+{
+    "LinkText": "View My Submission",
+	"StatusBarText": "Opening My Submission Page....",
+	"Url": "https://services.gst.gov.in/services/auth/submissions",
+	 "Header": "5. User Services"
+},
+
+{
+    "LinkText": "Search HSN Code",
+	"StatusBarText": "Opening HSN Search Page....",
+	"Url": "https://services.gst.gov.in/services/auth/searchhsnsac",
+	 "Header": "5. User Services"
+},
+
+{
+    "LinkText": "Furnish Letter of Undertaking (LUT)",
+	"StatusBarText": "Opening Furnish LUT Page....",
+	"Url": "https://services.gst.gov.in/services2/auth/getlutform",
+	 "Header": "5. User Services"
+},
+
+{
+    "LinkText": "ITC-02 Pending For ActionS",
+	"StatusBarText": "Opening Pending ITC-02 Page....",
+	"Url": "https://return.gst.gov.in/returns2/auth/itc02/pendingactions",
+	 "Header": "5. User Services"
+},
+
+{
+    "LinkText": "Communication Between Taxpayers",
+	"StatusBarText": "Opening Tax Payers Communication Page....",
+	"Url": "https://prodcc.gst.gov.in/cchannel/auth/viewnotification",
+	 "Header": "5. User Services"
+},
+
+{
+    "LinkText": "Application for Refund",
+	"StatusBarText": "Opening Application for Refund Page....",
+	"Url": "https://refund.gst.gov.in/refunds/auth/refunddashboard",
+	 "Header": "8. Refunds"
+},
+
+{
+    "LinkText": "Refund Saved/Filed Application",
+	"StatusBarText": "Opening Saved / Filed Refund Appl. Page....",
+	"Url": "https://refund.gst.gov.in/refunds/auth/savedapplication",
+	 "Header": "8. Refunds"
+},
+
+{
+    "LinkText": "Track Application Status",
+	"StatusBarText": "Opening Track Application Page....",
+	"Url": "https://services.gst.gov.in/services/auth/trackstatus",
+	 "Header": "8. Refunds"
+},
+
+{
+    "LinkText": "Track Application Status",
+	"StatusBarText": "Opening Track Application Page....",
+	"Url": "https://refund.gst.gov.in/refunds/auth/trackInvStatus",
+	 "Header": "8. Refunds"
+},
+
+{
+    "LinkText": "Invoice Management System (IMS) Dashboard",
+	"StatusBarText": "Opening IMS Dashboard....",
+	"Url": "https://return.gst.gov.in/imsweb/auth/imsDashboard",
+	 "Header": "3. Returns"
+},
+{
+    "LinkText": "Invoice Management System (IMS)Inward Supply",
+	"StatusBarText": "Opening IMS Inward Supply....",
+	"Url": "https://return.gst.gov.in/imsweb/auth/inwardsupplies",
+	 "Header": "3. Returns"
+},	
+{
+    "LinkText": "Invoice Management System (IMS)Outward Supply",
+	"StatusBarText": "Opening IMS Outward Supply....",
+	"Url": "https://return.gst.gov.in/imsweb/auth/outwardsupplies",
+	 "Header": "3. Returns"
+	 },	
+]
