@@ -1,3 +1,25 @@
+alter table SPQR1B2B add column 'Fld_ReturnType'    TEXT;
+alter table SPQR1B2CL add column 'Fld_ReturnType'    TEXT;
+alter table SPQR1B2CS add column 'Fld_ReturnType'    TEXT;
+alter table SPQR1ZeroRated add column 'Fld_ReturnType'    TEXT;
+alter table SPQR1CDN add column 'Fld_ReturnType'    TEXT;
+alter table SPQR1CDNUR add column 'Fld_ReturnType'    TEXT;
+alter table SPQR1NilRated add column 'Fld_ReturnType'    TEXT;
+alter table SPQR1GrossAdvance add column 'Fld_ReturnType'    TEXT;
+alter table SPQR1NetAdvance add column 'Fld_ReturnType'    TEXT;
+alter table SPQR1HSN add column 'Fld_ReturnType'    TEXT;
+alter table SPQR1Document add column 'Fld_ReturnType'    TEXT;
+alter table SPQR1ECommerce add column 'Fld_ReturnType'    TEXT;
+alter table SPQR1AmendB2B add column 'Fld_ReturnType'    TEXT;
+alter table SPQR1AmendB2CL add column 'Fld_ReturnType'    TEXT;
+alter table SPQR1AmendB2CS add column 'Fld_ReturnType'    TEXT;
+alter table SPQR1AmendEXPORT add column 'Fld_ReturnType'    TEXT;
+alter table SPQR1AmendCDNR add column 'Fld_ReturnType'    TEXT;
+alter table SPQR1AmendCDNUR add column 'Fld_ReturnType'    TEXT;
+alter table SPQR1AmendAT add column 'Fld_ReturnType'    TEXT;
+alter table SPQR1AmendTXP add column 'Fld_ReturnType'    TEXT;
+
+
 alter table SPQTurnoverReport add column  'Fld_Fiingdate'  VARCHAR (300);
 alter table SPQCompanyMaster add column  'Fld_DeviceId'  VARCHAR (300);
 
@@ -7,6 +29,7 @@ alter table SPQMail_Credential add column  'LastCheckDate'  VARCHAR (30);
 INSERT INTO SPQYearMaster(Fld_IsDeleted,Fld_FolderName,Fld_Year) select 0, '2023 - 2024','2023 - 2024' WHERE NOT EXISTS ( SELECT * FROM SPQYearMaster WHERE Fld_IsDeleted = 0 AND Fld_Year = '2023 - 2024');
 
 INSERT INTO SPQYearMaster(Fld_IsDeleted,Fld_FolderName,Fld_Year) select 0, '2024 - 2025','2024 - 2025' WHERE NOT EXISTS ( SELECT * FROM SPQYearMaster WHERE Fld_IsDeleted = 0 AND Fld_Year = '2024 - 2025');
+INSERT INTO SPQYearMaster(Fld_IsDeleted,Fld_FolderName,Fld_Year) select 0, '2025 - 2026','2025 - 2026' WHERE NOT EXISTS ( SELECT * FROM SPQYearMaster WHERE Fld_IsDeleted = 0 AND Fld_Year = '2025 - 2026');
 
 INSERT INTO SPQAssignCompany ( Fld_InsertDate,Fld_UpdateDate) select 'Agreed','EndUserLicenseAgreement' WHERE NOT EXISTS ( SELECT * FROM SPQAssignCompany WHERE  Fld_InsertDate = 'Agreed');
 
