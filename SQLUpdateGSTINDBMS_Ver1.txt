@@ -1,75 +1,101 @@
-CREATE TABLE SPQR2PurchaseB2b (
-    Fld_Id              INTEGER PRIMARY KEY AUTOINCREMENT
-                                NOT NULL,
-    Fld_Sequence        TEXT,
-    Fld_GSTIN           TEXT,
-    Fld_NameOfParty     TEXT,
-    Fld_InvoiceNo       TEXT,
-    Fld_InvoiceDate     TEXT,
-    Fld_InvoiceValue    TEXT,
-    Fld_Rate            TEXT,
-    Fld_TaxableVal      TEXT,
-    Fld_IntTax          TEXT,
-    Fld_CtrlTax         TEXT,
-    Fld_StateTax        TEXT,
-    Fld_CessTax         TEXT,
-    Fld_POS             TEXT,
-    Fld_Whether         TEXT,
-    Fld_IntTaxITC       TEXT,
-    Fld_CtrlTaxITC      TEXT,
-    Fld_StateTaxITC     TEXT,
-    Fld_CessTaxITC      TEXT,
-    Fld_RCharge         TEXT,
-    Fld_InvType         TEXT,
-    Fld_FileStatus      TEXT,
-    Fld_Month           TEXT,
-    Fld_Remark          TEXT,
-    Fld_FinancialYear   TEXT,
-    Fld_ERPVoucherNo    TEXT,
-    ITC_Claim_Status    TEXT,
-    ITC_SupFilingPeriod TEXT,
-    ITC_Claim_Month     TEXT,
-    ITC_Claim_FYear     TEXT,
-    ITC_B2B_Month       TEXT,
-    ITC_B2B_FYear       TEXT,
-    ITC_B2B_Fld_ID      TEXT,
-    Fld_BranchCode      TEXT
+alter table SPQR1B2B add column 'Fld_ReturnType'    TEXT;
+ alter table SPQR1B2CL add column 'Fld_ReturnType'    TEXT;
+ alter table SPQR1B2CS add column 'Fld_ReturnType'    TEXT;
+ alter table SPQR1ZeroRated add column 'Fld_ReturnType'    TEXT;
+ alter table SPQR1CDN add column 'Fld_ReturnType'    TEXT;
+alter table SPQR1CDNUR add column 'Fld_ReturnType'    TEXT;
+alter table SPQR1NilRated add column 'Fld_ReturnType'    TEXT;
+alter table SPQR1GrossAdvance add column 'Fld_ReturnType'    TEXT;
+alter table SPQR1NetAdvance add column 'Fld_ReturnType'    TEXT;
+alter table SPQR1HSN add column 'Fld_ReturnType'    TEXT;
+alter table SPQR1Document add column 'Fld_ReturnType'    TEXT;
+alter table SPQR1ECommerce add column 'Fld_ReturnType'    TEXT;
+alter table SPQR1AmendB2B add column 'Fld_ReturnType'    TEXT;
+alter table SPQR1AmendB2CL add column 'Fld_ReturnType'    TEXT;
+alter table SPQR1AmendB2CS add column 'Fld_ReturnType'    TEXT;
+alter table SPQR1AmendEXPORT add column 'Fld_ReturnType'    TEXT;
+alter table SPQR1AmendCDNR add column 'Fld_ReturnType'    TEXT;
+alter table SPQR1AmendCDNUR add column 'Fld_ReturnType'    TEXT;
+alter table SPQR1AmendAT add column 'Fld_ReturnType'    TEXT;
+alter table SPQR1AmendTXP add column 'Fld_ReturnType'    TEXT;
+
+
+CREATE TABLE SPQIMSB2B (Fld_ID            INTEGER PRIMARY KEY AUTOINCREMENT,Fld_Gstin         TEXT,Fld_TradeName     TEXT,Fld_IsBlocked     TEXT,Fld_RtnPrd        TEXT,Fld_srcform       TEXT,Fld_InvoiceNo     TEXT,Fld_InvoiceDate   TEXT,Fld_InvoiceType   TEXT,Fld_Pos           TEXT,Fld_srcfilstatus  TEXT,Fld_InvoiceValue  TEXT,Fld_TaxableValue  TEXT,Fld_IGST          TEXT,Fld_CGST          TEXT,Fld_SGST          TEXT,Fld_CESS          TEXT,Fld_action        TEXT,Fld_Month         TEXT,Fld_FinancialYear TEXT,Fld_RevStatus     TEXT);
+
+CREATE TABLE SPQIMSB2BAmd (Fld_ID             INTEGER PRIMARY KEY AUTOINCREMENT,Fld_Gstin          TEXT,Fld_TradeName      TEXT,Fld_IsBlocked      TEXT,Fld_RtnPrd         TEXT,Fld_srcform        TEXT,Fld_OrgInvoiceNo   TEXT,Fld_OrgInvoiceDate TEXT,Fld_InvoiceNo      TEXT,Fld_InvoiceDate    TEXT,Fld_InvoiceType    TEXT,Fld_Pos            TEXT,Fld_srcfilstatus   TEXT,Fld_InvoiceValue   TEXT,Fld_TaxableValue   TEXT,Fld_IGST           TEXT,Fld_CGST           TEXT,Fld_SGST           TEXT,Fld_CESS           TEXT,Fld_action         TEXT,Fld_Month          TEXT,Fld_FinancialYear  TEXT,Fld_RevStatus      TEXT);
+CREATE TABLE SPQIMSCDN (Fld_ID            INTEGER PRIMARY KEY AUTOINCREMENT,Fld_Gstin         TEXT,Fld_TradeName     TEXT,Fld_IsBlocked     TEXT,Fld_RtnPrd        TEXT,Fld_srcform       TEXT,Fld_NoteNo        TEXT,Fld_NoteDate      TEXT,Fld_InvoiceType   TEXT,Fld_Pos           TEXT,Fld_srcfilstatus  TEXT,Fld_InvoiceValue  TEXT,Fld_TaxableValue  TEXT,Fld_IGST          TEXT,Fld_CGST          TEXT,Fld_SGST          TEXT,Fld_CESS          TEXT,Fld_action        TEXT,Fld_Month         TEXT,Fld_FinancialYear TEXT,Fld_NoteType      TEXT,Fld_RevStatus     TEXT);
+
+
+CREATE TABLE SPQIMSCDNAmd (Fld_ID            INTEGER PRIMARY KEY AUTOINCREMENT,Fld_Gstin         TEXT,Fld_TradeName     TEXT,Fld_IsBlocked     TEXT,Fld_RtnPrd        TEXT,Fld_srcform       TEXT,Fld_OrgNoteNo     TEXT,Fld_OrgNoteDate   TEXT,Fld_NoteNo        TEXT,Fld_NoteDate      TEXT,Fld_InvoiceType   TEXT,Fld_Pos           TEXT,Fld_srcfilstatus  TEXT,Fld_InvoiceValue  TEXT,Fld_TaxableValue  TEXT,Fld_IGST          TEXT,Fld_CGST          TEXT,Fld_SGST          TEXT,Fld_CESS          TEXT,Fld_action        TEXT,Fld_Month         TEXT,Fld_FinancialYear TEXT,Fld_NoteType      TEXT,Fld_RevStatus     TEXT);
+CREATE TABLE SPQIMSECOM (Fld_ID              INTEGER PRIMARY KEY AUTOINCREMENT,Fld_Gstin           TEXT,Fld_RtnPrd          TEXT,Fld_Action          TEXT,Fld_srcform         TEXT,Fld_InvoiceNo       TEXT,Fld_InvoiceDate     TEXT,Fld_ispendactnallwd TEXT,Fld_Pos             TEXT,Fld_srcfilstatus    TEXT,Fld_InvoiceValue    TEXT,Fld_TaxableValue    TEXT,Fld_IGST            TEXT,Fld_CGST            TEXT,Fld_SGST            TEXT,Fld_CESS            TEXT,Fld_Month           TEXT,Fld_FinancialYear   TEXT,Fld_RevStatus       TEXT);
+
+CREATE TABLE SPQIMSECOMAmd (Fld_ID              INTEGER PRIMARY KEY AUTOINCREMENT,Fld_Gstin           TEXT,Fld_RtnPrd          TEXT,Fld_Action          TEXT,Fld_srcform         TEXT,Fld_OrgInvoiceNo    TEXT,Fld_OrgInvoiceDate  TEXT,Fld_InvoiceNo       TEXT,Fld_InvoiceDate     TEXT,Fld_ispendactnallwd TEXT,Fld_Pos             TEXT,Fld_srcfilstatus    TEXT,Fld_InvoiceValue    TEXT,Fld_TaxableValue    TEXT,Fld_IGST            TEXT,Fld_CGST            TEXT,Fld_SGST            TEXT,Fld_CESS            TEXT,Fld_Month           TEXT,Fld_FinancialYear   TEXT,Fld_RevStatus       TEXT);
+
+
+
+CREATE TABLE SPQELiabilityLedgerpart2 (
+    Fld_Sequence            INTEGER,
+    Fld_Date                TEXT,
+    Fld_ReferenceNo         TEXT,
+    Fld_TaxPeriod           TEXT,
+    Fld_Ledger              TEXT,
+    Fld_Demand_Liability_Id TEXT,
+    Fld_Description         TEXT,
+    Fld_TransactionType     TEXT,
+    Fld_AmountIGST          TEXT,
+    Fld_IGST_Interest       TEXT,
+    Fld_IGST_Penalty        TEXT,
+    Fld_IGST_Fee            TEXT,
+    Fld_IGST_Other          TEXT,
+    Fld_IGST_Total          TEXT,
+    Fld_AmountCGST          TEXT,
+    Fld_CGST_Interest       TEXT,
+    Fld_CGST_Penalty        TEXT,
+    Fld_CGST_Fee            TEXT,
+    Fld_CGST_Other          TEXT,
+    Fld_CGST_Total          TEXT,
+    Fld_AmountSGST          TEXT,
+    Fld_SGST_Interest       TEXT,
+    Fld_SGST_Penalty        TEXT,
+    Fld_SGST_Fee            TEXT,
+    Fld_SGST_Other          TEXT,
+    Fld_SGST_Total          TEXT,
+    Fld_AmountCESS          TEXT,
+    Fld_CESS_Interest       TEXT,
+    Fld_CESS_Penalty        TEXT,
+    Fld_CESS_Fee            TEXT,
+    Fld_CESS_Other          TEXT,
+    Fld_CESS_Total          TEXT,
+    Fld_BAL_IGST            TEXT,
+    Fld_BAL_IGST_Interest   TEXT,
+    Fld_BAL_IGST_Penalty    TEXT,
+    Fld_BAL_IGST_Fee        TEXT,
+    Fld_BAL_IGST_Other      TEXT,
+    Fld_BAL_IGST_Total      TEXT,
+    Fld_BAL_CGST            TEXT,
+    Fld_BAL_CGST_Interest   TEXT,
+    Fld_BAL_CGST_Penalty    TEXT,
+    Fld_BAL_CGST_Fee        TEXT,
+    Fld_BAL_CGST_Other      TEXT,
+    Fld_BAL_CGST_Total      TEXT,
+    Fld_BAL_SGST            TEXT,
+    Fld_BAL_SGST_Interest   TEXT,
+    Fld_BAL_SGST_Penalty    TEXT,
+    Fld_BAL_SGST_Fee        TEXT,
+    Fld_BAL_SGST_Other      TEXT,
+    Fld_BAL_SGST_Total      TEXT,
+    Fld_Bal_CESS            TEXT,
+    Fld_BAL_CESS_Interest   TEXT,
+    Fld_BAL_CESS_Penalty    TEXT,
+    Fld_BAL_CESS_Fee        TEXT,
+    Fld_BAL_CESS_Other      TEXT,
+    Fld_BAL_CESS_Total      TEXT,
+    Fld_Month               TEXT,
+    Fld_FinancialYear       TEXT
 );
 
-CREATE TABLE SPQR2PurchaseCDN (
-    Fld_Id              INTEGER PRIMARY KEY AUTOINCREMENT
-                                NOT NULL,
-    Fld_Sequence        TEXT,
-    Fld_GSTIN           TEXT,
-    Fld_PartyName       TEXT,
-    Fld_TypeOfNote      TEXT,
-    Fld_Reason          TEXT,
-    Fld_PreGST,
-    Fld_DbtCrdtNoteNo   TEXT,
-    Fld_DbtCrdtNoteDate TEXT,
-    Fld_OrgInvoiceNo    TEXT,
-    Fld_OrginvoiceDate  TEXT,
-    Fld_NoteValue       TEXT,
-    Fld_Rate            TEXT,
-    Fld_Taxable         TEXT,
-    Fld_IGSTAmnt        TEXT,
-    Fld_CGSTAmnt        TEXT,
-    Fld_SGSTAmnt        TEXT,
-    Fld_CessAmnt        TEXT,
-    Fld_SupplyType      TEXT,
-    Fld_ElgbForITC      TEXT,
-    Fld_TotalTaxIGST    TEXT,
-    Fld_TotalTaxCGST    TEXT,
-    Fld_TotalTaxSGST    TEXT,
-    Fld_TotalTaxCESS    TEXT,
-    Fld_FileStatus      TEXT,
-    Fld_Month           TEXT,
-    Fld_Remark          TEXT,
-    Fld_FinancialYear   TEXT,
-    Fld_ERPVoucherNo    TEXT,
-    Fld_BranchCode      TEXT
-);
-
+CREATE TABLE SPQR2PurchaseB2b (Fld_Id              INTEGER PRIMARY KEY AUTOINCREMENT                            NOT NULL,Fld_Sequence        TEXT,Fld_GSTIN           TEXT,Fld_NameOfParty     TEXT,Fld_InvoiceNo       TEXT,Fld_InvoiceDate     TEXT,Fld_InvoiceValue    TEXT,Fld_Rate            TEXT,Fld_TaxableVal      TEXT,Fld_IntTax          TEXT,Fld_CtrlTax         TEXT,Fld_StateTax        TEXT,Fld_CessTax         TEXT,Fld_POS             TEXT,Fld_Whether         TEXT,Fld_IntTaxITC       TEXT,Fld_CtrlTaxITC      TEXT,Fld_StateTaxITC     TEXT,Fld_CessTaxITC      TEXT,Fld_RCharge         TEXT,Fld_InvType         TEXT,Fld_FileStatus      TEXT,Fld_Month           TEXT,Fld_Remark          TEXT,Fld_FinancialYear   TEXT,Fld_ERPVoucherNo    TEXT,ITC_Claim_Status    TEXT,ITC_SupFilingPeriod TEXT,ITC_Claim_Month     TEXT,ITC_Claim_FYear     TEXT,ITC_B2B_Month       TEXT,ITC_B2B_FYear       TEXT,ITC_B2B_Fld_ID      TEXT,Fld_BranchCode      TEXT);
+CREATE TABLE SPQR2PurchaseCDN (Fld_Id              INTEGER PRIMARY KEY AUTOINCREMENT                            NOT NULL,Fld_Sequence        TEXT,Fld_GSTIN           TEXT,Fld_PartyName       TEXT,Fld_TypeOfNote      TEXT,Fld_Reason          TEXT,Fld_PreGST,Fld_DbtCrdtNoteNo   TEXT,Fld_DbtCrdtNoteDate TEXT,Fld_OrgInvoiceNo    TEXT,Fld_OrginvoiceDate  TEXT,Fld_NoteValue       TEXT,Fld_Rate            TEXT,Fld_Taxable         TEXT,Fld_IGSTAmnt        TEXT,Fld_CGSTAmnt        TEXT,Fld_SGSTAmnt        TEXT,Fld_CessAmnt        TEXT,Fld_SupplyType      TEXT,Fld_ElgbForITC      TEXT,Fld_TotalTaxIGST    TEXT,Fld_TotalTaxCGST    TEXT,Fld_TotalTaxSGST    TEXT,Fld_TotalTaxCESS    TEXT,Fld_FileStatus      TEXT,Fld_Month           TEXT,Fld_Remark          TEXT,Fld_FinancialYear   TEXT,Fld_ERPVoucherNo    TEXT,Fld_BranchCode      TEXT);
 
 CREATE TABLE SPQERCMLiabilityITCStatement (
     Fld_Id                  INTEGER PRIMARY KEY AUTOINCREMENT
