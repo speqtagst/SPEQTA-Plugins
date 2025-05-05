@@ -1,3 +1,54 @@
+Alter table SPQR1B2B add column Fld_GSTR1ARtnStatus text default 0 
+Alter table SPQR1B2CL add column Fld_GSTR1ARtnStatus text default 0 
+Alter table SPQR1B2CS add column Fld_GSTR1ARtnStatus text default 0 
+Alter table SPQR1ZeroRated add column Fld_GSTR1ARtnStatus text default 0 
+Alter table SPQR1HSN add column Fld_GSTR1ARtnStatus text default 0 
+Alter table SPQR1CDN add column Fld_GSTR1ARtnStatus text default 0 
+Alter table SPQR1CDNUR add column Fld_GSTR1ARtnStatus text default 0 
+alter table SPQR1NilRated add column Fld_GSTR1ARtnStatus text default 0 
+alter table SPQR1GrossAdvance add column Fld_GSTR1ARtnStatus text default 0 ;
+alter table SPQR1NetAdvance add column Fld_GSTR1ARtnStatus text default 0 ;
+alter table SPQR1Document add column Fld_GSTR1ARtnStatus text default 0 ;
+alter table SPQR1AmendB2B add column Fld_GSTR1ARtnStatus text default 0 ;
+alter table SPQR1AmendB2CL add column Fld_GSTR1ARtnStatus text default 0 ;
+alter table SPQR1AmendB2CS add column Fld_GSTR1ARtnStatus text default 0 ;
+alter table SPQR1AmendEXPORT add column Fld_GSTR1ARtnStatus text default 0 ;
+alter table SPQR1AmendCDNR add column Fld_GSTR1ARtnStatus text default 0 ;
+alter table SPQR1AmendCDNUR add column Fld_GSTR1ARtnStatus text default 0 ;
+alter table SPQR1AmendAT add column Fld_GSTR1ARtnStatus text default 0 ;
+alter table SPQR1AmendTXP add column Fld_GSTR1ARtnStatus text default 0 ;
+
+
+CREATE TABLE SPQR2BRejected (
+    Fld_Id            INTEGER PRIMARY KEY AUTOINCREMENT
+                              NOT NULL,
+    Fld_GSTIN         TEXT,
+    Fld_supfildt      TEXT,
+    Fld_supprd        TEXT,
+    Fld_trdnm         TEXT,
+    Fld_dt            TEXT,
+    Fld_inum          TEXT,
+    Fld_pos           TEXT,
+    Fld_rev           TEXT,
+    Fld_rsn           TEXT,
+    Fld_typ           TEXT,
+    Fld_val           TEXT,
+    Fld_cess          TEXT,
+    Fld_cgst          TEXT,
+    Fld_igst          TEXT,
+    Fld_num           TEXT,
+    Fld_sgst          TEXT,
+    Fld_txval         TEXT,
+    Fld_Month         TEXT,
+    Fld_FinancialYear TEXT,
+    Fld_Sequence      TEXT,
+    Fld_RecordType    TEXT,
+    Fld_Irn           TEXT,
+    Fld_IrnDate       TEXT,
+    Fld_Source        TEXT,
+    Fld_InvoiceType   TEXT
+);
+
 alter table SPQR1B2B add column 'Fld_ReturnType'    TEXT;
  alter table SPQR1B2CL add column 'Fld_ReturnType'    TEXT;
  alter table SPQR1B2CS add column 'Fld_ReturnType'    TEXT;
