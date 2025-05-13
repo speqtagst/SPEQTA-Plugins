@@ -1,3 +1,4 @@
+Alter table SPQTcsReceivedDetail add column Fld_POS text default NULL; 
 Alter table SPQR1B2B add column Fld_GSTR1ARtnStatus text default 0 
 Alter table SPQR1B2CL add column Fld_GSTR1ARtnStatus text default 0 
 Alter table SPQR1B2CS add column Fld_GSTR1ARtnStatus text default 0 
