@@ -536,6 +536,8 @@ CREATE TABLE SPQLast5Return (
 );
 
 alter table SPQR2Form4 add Column Fld_ERPVoucherNo TEXT;
+alter table SPQR2Form4 add Column Fld_BranchCode TEXT;
+
 alter table SPQR2Form7Other add Column Fld_ERPVoucherNo TEXT;
 
 alter table SPQTdsReceivedDetail add column 'Fld_DeductorCollectorName' TEXT;
