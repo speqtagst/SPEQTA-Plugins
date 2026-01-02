@@ -1,3 +1,4 @@
+ALTER TABLE SPQR3BTaxPayment  Add Column Fld_nls_GST TEXT;
 Alter table SPQR1HSN add column Fld_RecordType text default NULL;
 Alter table SPQTdsReceivedDetail add column Fld_CheckSum text default NULL;
 Alter table SPQTcsReceivedDetail add column Fld_POS text default NULL; 
