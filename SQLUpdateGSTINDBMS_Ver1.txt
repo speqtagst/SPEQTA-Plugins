@@ -53,6 +53,34 @@ CREATE TABLE SPQR2BRejected (
     Fld_InvoiceType   TEXT
 );
 
+CREATE TABLE SPQNegativeLiability (
+    Fld_SrNo          INTEGER,
+    Fld_Date          TEXT,
+    Fld_ReferenceNo   TEXT,
+    Fld_TaxPeriod     TEXT,
+    Fld_FinancialYear TEXT,
+    Fld_Description   TEXT,
+    Fld_TranType      TEXT,
+    Fld_RC_IGST       REAL    DEFAULT 0,
+    Fld_RC_CGST       REAL    DEFAULT 0,
+    Fld_RC_SGST       REAL    DEFAULT 0,
+    Fld_RC_CESS       REAL    DEFAULT 0,
+    Fld_OTRC_IGST     REAL    DEFAULT 0,
+    Fld_OTRC_CGST     REAL    DEFAULT 0,
+    Fld_OTRC_SGST     REAL    DEFAULT 0,
+    Fld_OTRC_CESS     REAL    DEFAULT 0,
+    Fld_BAL_RC_IGST   REAL    DEFAULT 0,
+    Fld_BAL_RC_CGST   REAL    DEFAULT 0,
+    Fld_BAL_RC_SGST   REAL    DEFAULT 0,
+    Fld_BAL_RC_CESS   REAL    DEFAULT 0,
+    Fld_BAL_OTRC_IGST REAL    DEFAULT 0,
+    Fld_BAL_OTRC_CGST REAL    DEFAULT 0,
+    Fld_BAL_OTRC_SGST REAL    DEFAULT 0,
+    Fld_BAL_OTRC_CESS REAL    DEFAULT 0,
+    Fld_CreatedOn     TEXT    DEFAULT (datetime('now') ) 
+);
+
+
 alter table SPQR1B2B add column 'Fld_ReturnType'    TEXT;
  alter table SPQR1B2CL add column 'Fld_ReturnType'    TEXT;
  alter table SPQR1B2CS add column 'Fld_ReturnType'    TEXT;
