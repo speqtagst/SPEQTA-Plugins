@@ -52,6 +52,23 @@ CREATE TABLE SPQR2BRejected (
     Fld_Source        TEXT,
     Fld_InvoiceType   TEXT
 );
+CREATE TABLE SPQGSTR4 (
+    Fld_Id            INTEGER PRIMARY KEY AUTOINCREMENT,
+    Fld_GSTN          TEXT,
+    Fld_Name          TEXT,
+    Fld_Pos           TEXT,
+    Fld_SupplyType    TEXT,
+    Fld_TaxableValue  TEXT,
+    Fld_Rate          TEXT,
+    Fld_IGST          TEXT,
+    Fld_CGST          TEXT,
+    Fld_SGST          TEXT,
+    Fld_Cess          TEXT,
+    Fld_Total         TEXT,
+    Fld_Rcm           TEXT,
+    Fld_FinancialYear TEXT
+);
+
 
 CREATE TABLE SPQNegativeLiability (
     Fld_SrNo          INTEGER,
