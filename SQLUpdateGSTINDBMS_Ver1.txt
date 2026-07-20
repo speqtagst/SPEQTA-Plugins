@@ -576,6 +576,107 @@ CREATE TABLE SPQRGstr1ExpZero (
     gstin                     TEXT
 );
 
+CREATE TABLE SPQR3BTaxPayment (
+    Fld_Id              INTEGER PRIMARY KEY AUTOINCREMENT
+                                NOT NULL,
+    Fld_Sequence        TEXT,
+    Fld_Description     TEXT,
+    Fld_OtRcTaxPay      TEXT,
+    Fld_IGST            TEXT,
+    Fld_CGST            TEXT,
+    Fld_SGST            TEXT,
+    Fld_CESS            TEXT,
+    Fld_OtRcTaxPayCash  TEXT,
+    Fld_RcTaxPay        TEXT,
+    Fld_RcTaxPayCash    TEXT,
+    Fld_InterestPay     TEXT,
+    Fld_InterestPayCash TEXT,
+    Fld_LateFeePay      TEXT,
+    Fld_LateFeePayCash  TEXT,
+    Fld_UtilizableCash  TEXT,
+    Fld_AdditionalCash  TEXT,
+    Fld_FileStatus      TEXT,
+    Fld_FinancialYear   TEXT,
+    Fld_Month           TEXT,
+    Fld_nls_GST         TEXT
+);
+
+
+CREATE TABLE SPQR2Form4 (
+    Fld_Id              INTEGER PRIMARY KEY AUTOINCREMENT
+                                NOT NULL,
+    Fld_Sequence        TEXT,
+    Fld_GSTIN           TEXT,
+    Fld_NameOfParty     TEXT,
+    Fld_InvoiceNo       TEXT,
+    Fld_InvoiceDate     TEXT,
+    Fld_InvoiceValue    TEXT,
+    Fld_Rate            TEXT,
+    Fld_TaxableVal      TEXT,
+    Fld_IntTax          TEXT,
+    Fld_CtrlTax         TEXT,
+    Fld_StateTax        TEXT,
+    Fld_CessTax         TEXT,
+    Fld_POS             TEXT,
+    Fld_Whether         TEXT,
+    Fld_IntTaxITC       TEXT,
+    Fld_CtrlTaxITC      TEXT,
+    Fld_StateTaxITC     TEXT,
+    Fld_CessTaxITC      TEXT,
+    Fld_RCharge         TEXT,
+    Fld_InvType         TEXT,
+    Fld_FileStatus      TEXT,
+    Fld_Month           TEXT,
+    Fld_Remark          TEXT,
+    Fld_FinancialYear   TEXT,
+    Fld_ERPVoucherNo    TEXT,
+    ITC_Claim_Status    TEXT,
+    ITC_SupFilingPeriod TEXT,
+    ITC_Claim_Month     TEXT,
+    ITC_Claim_FYear     TEXT,
+    ITC_B2B_Month       TEXT,
+    ITC_B2B_FYear       TEXT,
+    ITC_B2B_Fld_ID      TEXT,
+    Fld_BranchCode      TEXT,
+    Fld_Reversal        TEXT
+);
+
+CREATE TABLE SPQR2Form7Other (
+    Fld_Id              INTEGER PRIMARY KEY AUTOINCREMENT
+                                NOT NULL,
+    Fld_Sequence        TEXT,
+    Fld_GSTIN           TEXT,
+    Fld_PartyName       TEXT,
+    Fld_TypeOfNote      TEXT,
+    Fld_Reason          TEXT,
+    Fld_PreGST,
+    Fld_DbtCrdtNoteNo   TEXT,
+    Fld_DbtCrdtNoteDate TEXT,
+    Fld_OrgInvoiceNo    TEXT,
+    Fld_OrginvoiceDate  TEXT,
+    Fld_NoteValue       TEXT,
+    Fld_Rate            TEXT,
+    Fld_Taxable         TEXT,
+    Fld_IGSTAmnt        TEXT,
+    Fld_CGSTAmnt        TEXT,
+    Fld_SGSTAmnt        TEXT,
+    Fld_CessAmnt        TEXT,
+    Fld_SupplyType      TEXT,
+    Fld_ElgbForITC      TEXT,
+    Fld_TotalTaxIGST    TEXT,
+    Fld_TotalTaxCGST    TEXT,
+    Fld_TotalTaxSGST    TEXT,
+    Fld_TotalTaxCESS    TEXT,
+    Fld_FileStatus      TEXT,
+    Fld_Month           TEXT,
+    Fld_Remark          TEXT,
+    Fld_FinancialYear   TEXT,
+    Fld_ERPVoucherNo    TEXT,
+    Fld_BranchCode      TEXT,
+    Fld_Reversal        TEXT
+);
+
+
 
 CREATE TABLE SPQLast5Return (
     Fld_Return TEXT
