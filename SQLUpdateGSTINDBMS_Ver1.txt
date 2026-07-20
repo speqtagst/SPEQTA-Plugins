@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ALTER TABLE SPQR3BTaxPayment  Add Column Fld_nls_GST TEXT;
 Alter table SPQR1HSN add column Fld_RecordType text default NULL;
 Alter table SPQTdsReceivedDetail add column Fld_CheckSum text default NULL;
@@ -953,3 +954,858 @@ CREATE TABLE SPQR1EWBEXP (
 
 
 
+=======
+ALTER TABLE SPQR3BTaxPayment  Add Column Fld_nls_GST TEXT;
+Alter table SPQR1HSN add column Fld_RecordType text default NULL;
+Alter table SPQTdsReceivedDetail add column Fld_CheckSum text default NULL;
+Alter table SPQTcsReceivedDetail add column Fld_POS text default NULL; 
+Alter table SPQR1B2B add column Fld_GSTR1ARtnStatus text default 0 
+Alter table SPQR1B2CL add column Fld_GSTR1ARtnStatus text default 0 
+Alter table SPQR1B2CS add column Fld_GSTR1ARtnStatus text default 0 
+Alter table SPQR1ZeroRated add column Fld_GSTR1ARtnStatus text default 0 
+Alter table SPQR1HSN add column Fld_GSTR1ARtnStatus text default 0 
+Alter table SPQR1CDN add column Fld_GSTR1ARtnStatus text default 0 
+Alter table SPQR1CDNUR add column Fld_GSTR1ARtnStatus text default 0 
+alter table SPQR1NilRated add column Fld_GSTR1ARtnStatus text default 0 
+alter table SPQR1GrossAdvance add column Fld_GSTR1ARtnStatus text default 0 ;
+alter table SPQR1NetAdvance add column Fld_GSTR1ARtnStatus text default 0 ;
+alter table SPQR1Document add column Fld_GSTR1ARtnStatus text default 0 ;
+alter table SPQR1AmendB2B add column Fld_GSTR1ARtnStatus text default 0 ;
+alter table SPQR1AmendB2CL add column Fld_GSTR1ARtnStatus text default 0 ;
+alter table SPQR1AmendB2CS add column Fld_GSTR1ARtnStatus text default 0 ;
+alter table SPQR1AmendEXPORT add column Fld_GSTR1ARtnStatus text default 0 ;
+alter table SPQR1AmendCDNR add column Fld_GSTR1ARtnStatus text default 0 ;
+alter table SPQR1AmendCDNUR add column Fld_GSTR1ARtnStatus text default 0 ;
+alter table SPQR1AmendAT add column Fld_GSTR1ARtnStatus text default 0 ;
+alter table SPQR1AmendTXP add column Fld_GSTR1ARtnStatus text default 0 ;
+
+CREATE TABLE SPQGSTR4 (
+    Fld_Id            INTEGER PRIMARY KEY AUTOINCREMENT,
+    Fld_GSTN          TEXT,
+    Fld_Name          TEXT,
+    Fld_Pos           TEXT,
+    Fld_SupplyType    TEXT,
+    Fld_TaxableValue  TEXT,
+    Fld_Rate          TEXT,
+    Fld_IGST          TEXT,
+    Fld_CGST          TEXT,
+    Fld_SGST          TEXT,
+    Fld_Cess          TEXT,
+    Fld_Total         TEXT,
+    Fld_Rcm           TEXT,
+    Fld_FinancialYear TEXT
+);
+
+CREATE TABLE SPQR2BRejected (
+    Fld_Id            INTEGER PRIMARY KEY AUTOINCREMENT
+                              NOT NULL,
+    Fld_GSTIN         TEXT,
+    Fld_supfildt      TEXT,
+    Fld_supprd        TEXT,
+    Fld_trdnm         TEXT,
+    Fld_dt            TEXT,
+    Fld_inum          TEXT,
+    Fld_pos           TEXT,
+    Fld_rev           TEXT,
+    Fld_rsn           TEXT,
+    Fld_typ           TEXT,
+    Fld_val           TEXT,
+    Fld_cess          TEXT,
+    Fld_cgst          TEXT,
+    Fld_igst          TEXT,
+    Fld_num           TEXT,
+    Fld_sgst          TEXT,
+    Fld_txval         TEXT,
+    Fld_Month         TEXT,
+    Fld_FinancialYear TEXT,
+    Fld_Sequence      TEXT,
+    Fld_RecordType    TEXT,
+    Fld_Irn           TEXT,
+    Fld_IrnDate       TEXT,
+    Fld_Source        TEXT,
+    Fld_InvoiceType   TEXT
+);
+
+CREATE TABLE SPQNegativeLiability (
+    Fld_SrNo          INTEGER,
+    Fld_Date          TEXT,
+    Fld_ReferenceNo   TEXT,
+    Fld_TaxPeriod     TEXT,
+    Fld_FinancialYear TEXT,
+    Fld_Description   TEXT,
+    Fld_TranType      TEXT,
+    Fld_RC_IGST       REAL    DEFAULT 0,
+    Fld_RC_CGST       REAL    DEFAULT 0,
+    Fld_RC_SGST       REAL    DEFAULT 0,
+    Fld_RC_CESS       REAL    DEFAULT 0,
+    Fld_OTRC_IGST     REAL    DEFAULT 0,
+    Fld_OTRC_CGST     REAL    DEFAULT 0,
+    Fld_OTRC_SGST     REAL    DEFAULT 0,
+    Fld_OTRC_CESS     REAL    DEFAULT 0,
+    Fld_BAL_RC_IGST   REAL    DEFAULT 0,
+    Fld_BAL_RC_CGST   REAL    DEFAULT 0,
+    Fld_BAL_RC_SGST   REAL    DEFAULT 0,
+    Fld_BAL_RC_CESS   REAL    DEFAULT 0,
+    Fld_BAL_OTRC_IGST REAL    DEFAULT 0,
+    Fld_BAL_OTRC_CGST REAL    DEFAULT 0,
+    Fld_BAL_OTRC_SGST REAL    DEFAULT 0,
+    Fld_BAL_OTRC_CESS REAL    DEFAULT 0,
+    Fld_CreatedOn     TEXT    DEFAULT (datetime('now') ) 
+);
+
+
+alter table SPQR1B2B add column 'Fld_ReturnType'    TEXT;
+ alter table SPQR1B2CL add column 'Fld_ReturnType'    TEXT;
+ alter table SPQR1B2CS add column 'Fld_ReturnType'    TEXT;
+ alter table SPQR1ZeroRated add column 'Fld_ReturnType'    TEXT;
+ alter table SPQR1CDN add column 'Fld_ReturnType'    TEXT;
+alter table SPQR1CDNUR add column 'Fld_ReturnType'    TEXT;
+alter table SPQR1NilRated add column 'Fld_ReturnType'    TEXT;
+alter table SPQR1GrossAdvance add column 'Fld_ReturnType'    TEXT;
+alter table SPQR1NetAdvance add column 'Fld_ReturnType'    TEXT;
+alter table SPQR1HSN add column 'Fld_ReturnType'    TEXT;
+alter table SPQR1Document add column 'Fld_ReturnType'    TEXT;
+alter table SPQR1ECommerce add column 'Fld_ReturnType'    TEXT;
+alter table SPQR1AmendB2B add column 'Fld_ReturnType'    TEXT;
+alter table SPQR1AmendB2CL add column 'Fld_ReturnType'    TEXT;
+alter table SPQR1AmendB2CS add column 'Fld_ReturnType'    TEXT;
+alter table SPQR1AmendEXPORT add column 'Fld_ReturnType'    TEXT;
+alter table SPQR1AmendCDNR add column 'Fld_ReturnType'    TEXT;
+alter table SPQR1AmendCDNUR add column 'Fld_ReturnType'    TEXT;
+alter table SPQR1AmendAT add column 'Fld_ReturnType'    TEXT;
+alter table SPQR1AmendTXP add column 'Fld_ReturnType'    TEXT;
+
+
+CREATE TABLE SPQIMSB2B (Fld_ID            INTEGER PRIMARY KEY AUTOINCREMENT,Fld_Gstin         TEXT,Fld_TradeName     TEXT,Fld_IsBlocked     TEXT,Fld_RtnPrd        TEXT,Fld_srcform       TEXT,Fld_InvoiceNo     TEXT,Fld_InvoiceDate   TEXT,Fld_InvoiceType   TEXT,Fld_Pos           TEXT,Fld_srcfilstatus  TEXT,Fld_InvoiceValue  TEXT,Fld_TaxableValue  TEXT,Fld_IGST          TEXT,Fld_CGST          TEXT,Fld_SGST          TEXT,Fld_CESS          TEXT,Fld_action        TEXT,Fld_Month         TEXT,Fld_FinancialYear TEXT,Fld_RevStatus     TEXT);
+
+CREATE TABLE SPQIMSB2BAmd (Fld_ID             INTEGER PRIMARY KEY AUTOINCREMENT,Fld_Gstin          TEXT,Fld_TradeName      TEXT,Fld_IsBlocked      TEXT,Fld_RtnPrd         TEXT,Fld_srcform        TEXT,Fld_OrgInvoiceNo   TEXT,Fld_OrgInvoiceDate TEXT,Fld_InvoiceNo      TEXT,Fld_InvoiceDate    TEXT,Fld_InvoiceType    TEXT,Fld_Pos            TEXT,Fld_srcfilstatus   TEXT,Fld_InvoiceValue   TEXT,Fld_TaxableValue   TEXT,Fld_IGST           TEXT,Fld_CGST           TEXT,Fld_SGST           TEXT,Fld_CESS           TEXT,Fld_action         TEXT,Fld_Month          TEXT,Fld_FinancialYear  TEXT,Fld_RevStatus      TEXT);
+CREATE TABLE SPQIMSCDN (Fld_ID            INTEGER PRIMARY KEY AUTOINCREMENT,Fld_Gstin         TEXT,Fld_TradeName     TEXT,Fld_IsBlocked     TEXT,Fld_RtnPrd        TEXT,Fld_srcform       TEXT,Fld_NoteNo        TEXT,Fld_NoteDate      TEXT,Fld_InvoiceType   TEXT,Fld_Pos           TEXT,Fld_srcfilstatus  TEXT,Fld_InvoiceValue  TEXT,Fld_TaxableValue  TEXT,Fld_IGST          TEXT,Fld_CGST          TEXT,Fld_SGST          TEXT,Fld_CESS          TEXT,Fld_action        TEXT,Fld_Month         TEXT,Fld_FinancialYear TEXT,Fld_NoteType      TEXT,Fld_RevStatus     TEXT);
+
+
+CREATE TABLE SPQIMSCDNAmd (Fld_ID            INTEGER PRIMARY KEY AUTOINCREMENT,Fld_Gstin         TEXT,Fld_TradeName     TEXT,Fld_IsBlocked     TEXT,Fld_RtnPrd        TEXT,Fld_srcform       TEXT,Fld_OrgNoteNo     TEXT,Fld_OrgNoteDate   TEXT,Fld_NoteNo        TEXT,Fld_NoteDate      TEXT,Fld_InvoiceType   TEXT,Fld_Pos           TEXT,Fld_srcfilstatus  TEXT,Fld_InvoiceValue  TEXT,Fld_TaxableValue  TEXT,Fld_IGST          TEXT,Fld_CGST          TEXT,Fld_SGST          TEXT,Fld_CESS          TEXT,Fld_action        TEXT,Fld_Month         TEXT,Fld_FinancialYear TEXT,Fld_NoteType      TEXT,Fld_RevStatus     TEXT);
+CREATE TABLE SPQIMSECOM (Fld_ID              INTEGER PRIMARY KEY AUTOINCREMENT,Fld_Gstin           TEXT,Fld_RtnPrd          TEXT,Fld_Action          TEXT,Fld_srcform         TEXT,Fld_InvoiceNo       TEXT,Fld_InvoiceDate     TEXT,Fld_ispendactnallwd TEXT,Fld_Pos             TEXT,Fld_srcfilstatus    TEXT,Fld_InvoiceValue    TEXT,Fld_TaxableValue    TEXT,Fld_IGST            TEXT,Fld_CGST            TEXT,Fld_SGST            TEXT,Fld_CESS            TEXT,Fld_Month           TEXT,Fld_FinancialYear   TEXT,Fld_RevStatus       TEXT);
+
+CREATE TABLE SPQIMSECOMAmd (Fld_ID              INTEGER PRIMARY KEY AUTOINCREMENT,Fld_Gstin           TEXT,Fld_RtnPrd          TEXT,Fld_Action          TEXT,Fld_srcform         TEXT,Fld_OrgInvoiceNo    TEXT,Fld_OrgInvoiceDate  TEXT,Fld_InvoiceNo       TEXT,Fld_InvoiceDate     TEXT,Fld_ispendactnallwd TEXT,Fld_Pos             TEXT,Fld_srcfilstatus    TEXT,Fld_InvoiceValue    TEXT,Fld_TaxableValue    TEXT,Fld_IGST            TEXT,Fld_CGST            TEXT,Fld_SGST            TEXT,Fld_CESS            TEXT,Fld_Month           TEXT,Fld_FinancialYear   TEXT,Fld_RevStatus       TEXT);
+
+
+
+CREATE TABLE SPQELiabilityLedgerpart2 (
+    Fld_Sequence            INTEGER,
+    Fld_Date                TEXT,
+    Fld_ReferenceNo         TEXT,
+    Fld_TaxPeriod           TEXT,
+    Fld_Ledger              TEXT,
+    Fld_Demand_Liability_Id TEXT,
+    Fld_Description         TEXT,
+    Fld_TransactionType     TEXT,
+    Fld_AmountIGST          TEXT,
+    Fld_IGST_Interest       TEXT,
+    Fld_IGST_Penalty        TEXT,
+    Fld_IGST_Fee            TEXT,
+    Fld_IGST_Other          TEXT,
+    Fld_IGST_Total          TEXT,
+    Fld_AmountCGST          TEXT,
+    Fld_CGST_Interest       TEXT,
+    Fld_CGST_Penalty        TEXT,
+    Fld_CGST_Fee            TEXT,
+    Fld_CGST_Other          TEXT,
+    Fld_CGST_Total          TEXT,
+    Fld_AmountSGST          TEXT,
+    Fld_SGST_Interest       TEXT,
+    Fld_SGST_Penalty        TEXT,
+    Fld_SGST_Fee            TEXT,
+    Fld_SGST_Other          TEXT,
+    Fld_SGST_Total          TEXT,
+    Fld_AmountCESS          TEXT,
+    Fld_CESS_Interest       TEXT,
+    Fld_CESS_Penalty        TEXT,
+    Fld_CESS_Fee            TEXT,
+    Fld_CESS_Other          TEXT,
+    Fld_CESS_Total          TEXT,
+    Fld_BAL_IGST            TEXT,
+    Fld_BAL_IGST_Interest   TEXT,
+    Fld_BAL_IGST_Penalty    TEXT,
+    Fld_BAL_IGST_Fee        TEXT,
+    Fld_BAL_IGST_Other      TEXT,
+    Fld_BAL_IGST_Total      TEXT,
+    Fld_BAL_CGST            TEXT,
+    Fld_BAL_CGST_Interest   TEXT,
+    Fld_BAL_CGST_Penalty    TEXT,
+    Fld_BAL_CGST_Fee        TEXT,
+    Fld_BAL_CGST_Other      TEXT,
+    Fld_BAL_CGST_Total      TEXT,
+    Fld_BAL_SGST            TEXT,
+    Fld_BAL_SGST_Interest   TEXT,
+    Fld_BAL_SGST_Penalty    TEXT,
+    Fld_BAL_SGST_Fee        TEXT,
+    Fld_BAL_SGST_Other      TEXT,
+    Fld_BAL_SGST_Total      TEXT,
+    Fld_Bal_CESS            TEXT,
+    Fld_BAL_CESS_Interest   TEXT,
+    Fld_BAL_CESS_Penalty    TEXT,
+    Fld_BAL_CESS_Fee        TEXT,
+    Fld_BAL_CESS_Other      TEXT,
+    Fld_BAL_CESS_Total      TEXT,
+    Fld_Month               TEXT,
+    Fld_FinancialYear       TEXT
+);
+
+CREATE TABLE SPQR2PurchaseB2b (Fld_Id              INTEGER PRIMARY KEY AUTOINCREMENT                            NOT NULL,Fld_Sequence        TEXT,Fld_GSTIN           TEXT,Fld_NameOfParty     TEXT,Fld_InvoiceNo       TEXT,Fld_InvoiceDate     TEXT,Fld_InvoiceValue    TEXT,Fld_Rate            TEXT,Fld_TaxableVal      TEXT,Fld_IntTax          TEXT,Fld_CtrlTax         TEXT,Fld_StateTax        TEXT,Fld_CessTax         TEXT,Fld_POS             TEXT,Fld_Whether         TEXT,Fld_IntTaxITC       TEXT,Fld_CtrlTaxITC      TEXT,Fld_StateTaxITC     TEXT,Fld_CessTaxITC      TEXT,Fld_RCharge         TEXT,Fld_InvType         TEXT,Fld_FileStatus      TEXT,Fld_Month           TEXT,Fld_Remark          TEXT,Fld_FinancialYear   TEXT,Fld_ERPVoucherNo    TEXT,ITC_Claim_Status    TEXT,ITC_SupFilingPeriod TEXT,ITC_Claim_Month     TEXT,ITC_Claim_FYear     TEXT,ITC_B2B_Month       TEXT,ITC_B2B_FYear       TEXT,ITC_B2B_Fld_ID      TEXT,Fld_BranchCode      TEXT);
+CREATE TABLE SPQR2PurchaseCDN (Fld_Id              INTEGER PRIMARY KEY AUTOINCREMENT                            NOT NULL,Fld_Sequence        TEXT,Fld_GSTIN           TEXT,Fld_PartyName       TEXT,Fld_TypeOfNote      TEXT,Fld_Reason          TEXT,Fld_PreGST,Fld_DbtCrdtNoteNo   TEXT,Fld_DbtCrdtNoteDate TEXT,Fld_OrgInvoiceNo    TEXT,Fld_OrginvoiceDate  TEXT,Fld_NoteValue       TEXT,Fld_Rate            TEXT,Fld_Taxable         TEXT,Fld_IGSTAmnt        TEXT,Fld_CGSTAmnt        TEXT,Fld_SGSTAmnt        TEXT,Fld_CessAmnt        TEXT,Fld_SupplyType      TEXT,Fld_ElgbForITC      TEXT,Fld_TotalTaxIGST    TEXT,Fld_TotalTaxCGST    TEXT,Fld_TotalTaxSGST    TEXT,Fld_TotalTaxCESS    TEXT,Fld_FileStatus      TEXT,Fld_Month           TEXT,Fld_Remark          TEXT,Fld_FinancialYear   TEXT,Fld_ERPVoucherNo    TEXT,Fld_BranchCode      TEXT);
+
+CREATE TABLE SPQERCMLiabilityITCStatement (
+    Fld_Id                  INTEGER PRIMARY KEY AUTOINCREMENT
+                                    NOT NULL,
+    Fld_Sequence            TEXT,
+    Fld_Date                TEXT,
+    Fld_ReferenceNo         TEXT,
+    Fld_TaxPeriod           TEXT,
+    Fld_Description         TEXT,
+    Fld_TransactionType     TEXT,
+    Fld_RCMClaimIGST        TEXT,
+    Fld_RCMClaimCGST        TEXT,
+    Fld_RCMClaimSGST        TEXT,
+    Fld_RCMClaimCESS        TEXT,
+    Fld_RCMClaimTOTAL       TEXT,
+    Fld_RCMReversalIGST     TEXT,
+    Fld_RCMReversalCGST     TEXT,
+    Fld_RCMReversalSGST     TEXT,
+    Fld_RCMReversalCESS     TEXT,
+    Fld_RCMReversalTOTAL    TEXT,
+    Fld_RCMReclaimedIGST    TEXT,
+    Fld_RCMReclaimedCGST    TEXT,
+    Fld_RCMReclaimedSGST    TEXT,
+    Fld_RCMReclaimedCESS    TEXT,
+    Fld_RCMReclaimedTOTAL   TEXT,
+    Fld_ClosingBalanceIGST  TEXT,
+    Fld_ClosingBalanceCGST  TEXT,
+    Fld_ClosingBalanceSGST  TEXT,
+    Fld_ClosingBalanceCESS  TEXT,
+    Fld_ClosingBalanceTOTAL TEXT,
+    Fld_Month               TEXT,
+    Fld_FinancialYear       TEXT
+);
+alter table SPQR1EINVCB2B add column 'Fld_RecoStatus'                 TEXT;
+alter table SPQR1EINVCDNR add column 'Fld_RecoStatus'                 TEXT;
+alter table SPQR1EINVCDUNR add column 'Fld_RecoStatus'                 TEXT;
+alter table SPQR1EINVEXP add column 'Fld_RecoStatus'                 TEXT;
+CREATE TABLE SPQGSTR9TableDetail (
+    Fld_Id            INTEGER,
+    Fld_GSTIN         TEXT,
+    Fld_TableNo       VARCHAR,
+    Fld_TableRow      VARCHAR,
+    Fld_EntrySeq      INTEGER,
+    Fld_Description   TEXT,
+    Fld_CGST          TEXT,
+    Fld_SGST          TEXT,
+    Fld_IGST          TEXT,
+    Fld_CESS          TEXT,
+    Fld_FinancialYear TEXT,
+    Fld_Type          TEXT
+);
+delete from SPQGSTR9AllTableDescription where Fld_Id in(130,131,132);
+ 
+INSERT INTO SPQGSTR9AllTableDescription ( Fld_HeaderGroup,  Fld_Type,Fld_Description,     Fld_SrNo,   Fld_Id     )  VALUES ( 'PtII-4', NULL,                                        'Supplies on which e-commerce operator is required to pay tax as per section 9(5) (including amendments, if any)[E-commerce operator to report] ','G1', 130),                   ('PtII-4',  NULL,'Sub-total (A to G1 above)', 'H', 131),( 'PtII-5', NULL, 'Supplies on which tax is to be paid by e-commerce operators as persection 9(5) [Supplier to report]', 'C1', 132 );
+
+delete from SPQGSTR9CAllTableDescription where Fld_Id=107 ;
+
+INSERT INTO SPQGSTR9CAllTableDescription (      Fld_HeaderGroup,       Fld_Type,   Fld_Description,     Fld_ParameterName,       Fld_SrNo,   Fld_Id   )    VALUES (      'Table-9',            NULL,'6%',         '6',          'B1',            107     );
+delete from SPQGSTR9CAllTableDescription where Fld_Id=106 ;
+
+INSERT INTO SPQGSTR9CAllTableDescription (      Fld_HeaderGroup,       Fld_Type,   Fld_Description,     Fld_ParameterName,       Fld_SrNo,   Fld_Id   )    VALUES (      'Table-9',            NULL,'Others%',         'Others',          'K1',            106     );
+
+
+
+PRAGMA foreign_keys = off;
+BEGIN TRANSACTION;
+
+DROP TABLE IF EXISTS SPQR2BSummary_ISOSchema;
+CREATE TABLE IF NOT EXISTS SPQR2BSummary_ISOSchema (Fld_Id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, Fld_Sequence TEXT, Fld_Part TEXT, Fld_Heading TEXT, Fld_GSTR3BTable TEXT, Fld_itcavl TEXT, Fld_rev TEXT, Fld_igst TEXT, Fld_cgst TEXT, Fld_sgst TEXT, Fld_cess TEXT, Fld_Advisory TEXT, Fld_Month TEXT, Fld_FinancialYear TEXT, Fld_Gstr3BFilingDate TEXT, Col_1 TEXT, Col_2 TEXT, Col_3 TEXT, Col_4 TEXT);
+INSERT INTO SPQR2BSummary_ISOSchema (Fld_Id, Fld_Sequence, Fld_Part, Fld_Heading, Fld_GSTR3BTable, Fld_itcavl, Fld_rev, Fld_igst, Fld_cgst, Fld_sgst, Fld_cess, Fld_Advisory, Fld_Month, Fld_FinancialYear, Fld_Gstr3BFilingDate, Col_1, Col_2, Col_3, Col_4) VALUES (1, '1', 'PA-1', 'All other ITC - Supplies from registered persons other than reverse charge', '4(A)(5)', 'Yes', NULL, NULL, NULL, NULL, NULL, 'Net input tax credit may be availed under Table 4(A)(5) of FORM GSTR-3B.', '', '', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SPQR2BSummary_ISOSchema (Fld_Id, Fld_Sequence, Fld_Part, Fld_Heading, Fld_GSTR3BTable, Fld_itcavl, Fld_rev, Fld_igst, Fld_cgst, Fld_sgst, Fld_cess, Fld_Advisory, Fld_Month, Fld_FinancialYear, Fld_Gstr3BFilingDate, Col_1, Col_2, Col_3, Col_4) VALUES (2, '2', 'PA-1', 'B2B - Invoices', NULL, 'Yes', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SPQR2BSummary_ISOSchema (Fld_Id, Fld_Sequence, Fld_Part, Fld_Heading, Fld_GSTR3BTable, Fld_itcavl, Fld_rev, Fld_igst, Fld_cgst, Fld_sgst, Fld_cess, Fld_Advisory, Fld_Month, Fld_FinancialYear, Fld_Gstr3BFilingDate, Col_1, Col_2, Col_3, Col_4) VALUES (3, '3', 'PA-1', 'B2B - Debit notes', NULL, 'Yes', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SPQR2BSummary_ISOSchema (Fld_Id, Fld_Sequence, Fld_Part, Fld_Heading, Fld_GSTR3BTable, Fld_itcavl, Fld_rev, Fld_igst, Fld_cgst, Fld_sgst, Fld_cess, Fld_Advisory, Fld_Month, Fld_FinancialYear, Fld_Gstr3BFilingDate, Col_1, Col_2, Col_3, Col_4) VALUES (4, '4', 'PA-1', 'E-COMM', NULL, 'Yes', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SPQR2BSummary_ISOSchema (Fld_Id, Fld_Sequence, Fld_Part, Fld_Heading, Fld_GSTR3BTable, Fld_itcavl, Fld_rev, Fld_igst, Fld_cgst, Fld_sgst, Fld_cess, Fld_Advisory, Fld_Month, Fld_FinancialYear, Fld_Gstr3BFilingDate, Col_1, Col_2, Col_3, Col_4) VALUES (5, '5', 'PA-1', 'B2B - Invoices (Amendment)', NULL, 'Yes', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SPQR2BSummary_ISOSchema (Fld_Id, Fld_Sequence, Fld_Part, Fld_Heading, Fld_GSTR3BTable, Fld_itcavl, Fld_rev, Fld_igst, Fld_cgst, Fld_sgst, Fld_cess, Fld_Advisory, Fld_Month, Fld_FinancialYear, Fld_Gstr3BFilingDate, Col_1, Col_2, Col_3, Col_4) VALUES (6, '6', 'PA-1', 'B2B - Debit notes (Amendment)', NULL, 'Yes', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SPQR2BSummary_ISOSchema (Fld_Id, Fld_Sequence, Fld_Part, Fld_Heading, Fld_GSTR3BTable, Fld_itcavl, Fld_rev, Fld_igst, Fld_cgst, Fld_sgst, Fld_cess, Fld_Advisory, Fld_Month, Fld_FinancialYear, Fld_Gstr3BFilingDate, Col_1, Col_2, Col_3, Col_4) VALUES (7, '7', 'PA-1', 'E-COMM (Amendment)', NULL, 'Yes', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SPQR2BSummary_ISOSchema (Fld_Id, Fld_Sequence, Fld_Part, Fld_Heading, Fld_GSTR3BTable, Fld_itcavl, Fld_rev, Fld_igst, Fld_cgst, Fld_sgst, Fld_cess, Fld_Advisory, Fld_Month, Fld_FinancialYear, Fld_Gstr3BFilingDate, Col_1, Col_2, Col_3, Col_4) VALUES (8, '8', 'PA-2', 'Inward Supplies from ISD', '4(A)(4)', 'Yes', NULL, NULL, NULL, NULL, NULL, 'Net input tax credit may be availed under Table 4(A)(4) of FORM GSTR-3B.', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SPQR2BSummary_ISOSchema (Fld_Id, Fld_Sequence, Fld_Part, Fld_Heading, Fld_GSTR3BTable, Fld_itcavl, Fld_rev, Fld_igst, Fld_cgst, Fld_sgst, Fld_cess, Fld_Advisory, Fld_Month, Fld_FinancialYear, Fld_Gstr3BFilingDate, Col_1, Col_2, Col_3, Col_4) VALUES (9, '9', 'PA-2', 'ISD - Invoices', NULL, 'Yes', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SPQR2BSummary_ISOSchema (Fld_Id, Fld_Sequence, Fld_Part, Fld_Heading, Fld_GSTR3BTable, Fld_itcavl, Fld_rev, Fld_igst, Fld_cgst, Fld_sgst, Fld_cess, Fld_Advisory, Fld_Month, Fld_FinancialYear, Fld_Gstr3BFilingDate, Col_1, Col_2, Col_3, Col_4) VALUES (10, '10', 'PA-2', 'ISD - Invoices (Amendment)', NULL, 'Yes', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SPQR2BSummary_ISOSchema (Fld_Id, Fld_Sequence, Fld_Part, Fld_Heading, Fld_GSTR3BTable, Fld_itcavl, Fld_rev, Fld_igst, Fld_cgst, Fld_sgst, Fld_cess, Fld_Advisory, Fld_Month, Fld_FinancialYear, Fld_Gstr3BFilingDate, Col_1, Col_2, Col_3, Col_4) VALUES (11, '11', 'PA-3', 'Inward Supplies liable for reverse charge', '3.1(d) 
+ 4(A)(3)', 'Yes', NULL, NULL, NULL, NULL, NULL, 'These supplies shall be declared in Table 3.1(d) of FORM GSTR-3B for payment of tax. 
+Net input tax credit may be availed under Table 4(A)(3) of FORM GSTR-3B on payment of tax.', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SPQR2BSummary_ISOSchema (Fld_Id, Fld_Sequence, Fld_Part, Fld_Heading, Fld_GSTR3BTable, Fld_itcavl, Fld_rev, Fld_igst, Fld_cgst, Fld_sgst, Fld_cess, Fld_Advisory, Fld_Month, Fld_FinancialYear, Fld_Gstr3BFilingDate, Col_1, Col_2, Col_3, Col_4) VALUES (12, '12', 'PA-3', 'B2B - Invoices', NULL, 'Yes', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SPQR2BSummary_ISOSchema (Fld_Id, Fld_Sequence, Fld_Part, Fld_Heading, Fld_GSTR3BTable, Fld_itcavl, Fld_rev, Fld_igst, Fld_cgst, Fld_sgst, Fld_cess, Fld_Advisory, Fld_Month, Fld_FinancialYear, Fld_Gstr3BFilingDate, Col_1, Col_2, Col_3, Col_4) VALUES (13, '13', 'PA-3', 'B2B - Debit notes', NULL, 'Yes', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SPQR2BSummary_ISOSchema (Fld_Id, Fld_Sequence, Fld_Part, Fld_Heading, Fld_GSTR3BTable, Fld_itcavl, Fld_rev, Fld_igst, Fld_cgst, Fld_sgst, Fld_cess, Fld_Advisory, Fld_Month, Fld_FinancialYear, Fld_Gstr3BFilingDate, Col_1, Col_2, Col_3, Col_4) VALUES (14, '14', 'PA-3', 'B2B - Invoices (Amendment)', NULL, 'Yes', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SPQR2BSummary_ISOSchema (Fld_Id, Fld_Sequence, Fld_Part, Fld_Heading, Fld_GSTR3BTable, Fld_itcavl, Fld_rev, Fld_igst, Fld_cgst, Fld_sgst, Fld_cess, Fld_Advisory, Fld_Month, Fld_FinancialYear, Fld_Gstr3BFilingDate, Col_1, Col_2, Col_3, Col_4) VALUES (15, '15', 'PA-3', 'B2B - Debit notes (Amendment)', NULL, 'Yes', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SPQR2BSummary_ISOSchema (Fld_Id, Fld_Sequence, Fld_Part, Fld_Heading, Fld_GSTR3BTable, Fld_itcavl, Fld_rev, Fld_igst, Fld_cgst, Fld_sgst, Fld_cess, Fld_Advisory, Fld_Month, Fld_FinancialYear, Fld_Gstr3BFilingDate, Col_1, Col_2, Col_3, Col_4) VALUES (16, '16', 'PA-4', 'Import of Goods', '4(A)(1)', 'Yes', NULL, NULL, NULL, NULL, NULL, 'Net input tax credit may be availed under Table 4(A)(1) of FORM GSTR-3B.', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SPQR2BSummary_ISOSchema (Fld_Id, Fld_Sequence, Fld_Part, Fld_Heading, Fld_GSTR3BTable, Fld_itcavl, Fld_rev, Fld_igst, Fld_cgst, Fld_sgst, Fld_cess, Fld_Advisory, Fld_Month, Fld_FinancialYear, Fld_Gstr3BFilingDate, Col_1, Col_2, Col_3, Col_4) VALUES (17, '17', 'PA-4', 'IMPG - Import of goods from overseas', NULL, 'Yes', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SPQR2BSummary_ISOSchema (Fld_Id, Fld_Sequence, Fld_Part, Fld_Heading, Fld_GSTR3BTable, Fld_itcavl, Fld_rev, Fld_igst, Fld_cgst, Fld_sgst, Fld_cess, Fld_Advisory, Fld_Month, Fld_FinancialYear, Fld_Gstr3BFilingDate, Col_1, Col_2, Col_3, Col_4) VALUES (18, '18', 'PA-4', 'IMPG (Amendment)', NULL, 'Yes', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SPQR2BSummary_ISOSchema (Fld_Id, Fld_Sequence, Fld_Part, Fld_Heading, Fld_GSTR3BTable, Fld_itcavl, Fld_rev, Fld_igst, Fld_cgst, Fld_sgst, Fld_cess, Fld_Advisory, Fld_Month, Fld_FinancialYear, Fld_Gstr3BFilingDate, Col_1, Col_2, Col_3, Col_4) VALUES (19, '19', 'PA-4', 'IMPGSEZ - Import of goods from SEZ', NULL, 'Yes', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SPQR2BSummary_ISOSchema (Fld_Id, Fld_Sequence, Fld_Part, Fld_Heading, Fld_GSTR3BTable, Fld_itcavl, Fld_rev, Fld_igst, Fld_cgst, Fld_sgst, Fld_cess, Fld_Advisory, Fld_Month, Fld_FinancialYear, Fld_Gstr3BFilingDate, Col_1, Col_2, Col_3, Col_4) VALUES (20, '20', 'PA-4', 'IMPGSEZ (Amendment)', NULL, 'Yes', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SPQR2BSummary_ISOSchema (Fld_Id, Fld_Sequence, Fld_Part, Fld_Heading, Fld_GSTR3BTable, Fld_itcavl, Fld_rev, Fld_igst, Fld_cgst, Fld_sgst, Fld_cess, Fld_Advisory, Fld_Month, Fld_FinancialYear, Fld_Gstr3BFilingDate, Col_1, Col_2, Col_3, Col_4) VALUES (21, '21', 'PB-1', 'Others', '4(B)(2)', 'Yes', NULL, NULL, NULL, NULL, NULL, 'If this is positive, Credit shall be reversed under Table 4(B)(2) of FORM GSTR-3B.', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SPQR2BSummary_ISOSchema (Fld_Id, Fld_Sequence, Fld_Part, Fld_Heading, Fld_GSTR3BTable, Fld_itcavl, Fld_rev, Fld_igst, Fld_cgst, Fld_sgst, Fld_cess, Fld_Advisory, Fld_Month, Fld_FinancialYear, Fld_Gstr3BFilingDate, Col_1, Col_2, Col_3, Col_4) VALUES (22, '22', 'PB-1', 'B2B - Credit notes', NULL, 'Yes', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SPQR2BSummary_ISOSchema (Fld_Id, Fld_Sequence, Fld_Part, Fld_Heading, Fld_GSTR3BTable, Fld_itcavl, Fld_rev, Fld_igst, Fld_cgst, Fld_sgst, Fld_cess, Fld_Advisory, Fld_Month, Fld_FinancialYear, Fld_Gstr3BFilingDate, Col_1, Col_2, Col_3, Col_4) VALUES (23, '23', 'PB-1', 'B2B - Credit notes (Amendment)', NULL, 'Yes', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SPQR2BSummary_ISOSchema (Fld_Id, Fld_Sequence, Fld_Part, Fld_Heading, Fld_GSTR3BTable, Fld_itcavl, Fld_rev, Fld_igst, Fld_cgst, Fld_sgst, Fld_cess, Fld_Advisory, Fld_Month, Fld_FinancialYear, Fld_Gstr3BFilingDate, Col_1, Col_2, Col_3, Col_4) VALUES (24, '24', 'PB-1', 'B2B - Credit notes (Reverse charge)', NULL, 'Yes', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SPQR2BSummary_ISOSchema (Fld_Id, Fld_Sequence, Fld_Part, Fld_Heading, Fld_GSTR3BTable, Fld_itcavl, Fld_rev, Fld_igst, Fld_cgst, Fld_sgst, Fld_cess, Fld_Advisory, Fld_Month, Fld_FinancialYear, Fld_Gstr3BFilingDate, Col_1, Col_2, Col_3, Col_4) VALUES (25, '25', 'PB-1', 'B2B - Credit notes (Reverse charge)(Amendment)', NULL, 'Yes', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SPQR2BSummary_ISOSchema (Fld_Id, Fld_Sequence, Fld_Part, Fld_Heading, Fld_GSTR3BTable, Fld_itcavl, Fld_rev, Fld_igst, Fld_cgst, Fld_sgst, Fld_cess, Fld_Advisory, Fld_Month, Fld_FinancialYear, Fld_Gstr3BFilingDate, Col_1, Col_2, Col_3, Col_4) VALUES (26, '26', 'PB-1', 'ISD - Credit notes', NULL, 'Yes', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SPQR2BSummary_ISOSchema (Fld_Id, Fld_Sequence, Fld_Part, Fld_Heading, Fld_GSTR3BTable, Fld_itcavl, Fld_rev, Fld_igst, Fld_cgst, Fld_sgst, Fld_cess, Fld_Advisory, Fld_Month, Fld_FinancialYear, Fld_Gstr3BFilingDate, Col_1, Col_2, Col_3, Col_4) VALUES (27, '27', 'PB-1', 'ISD - Credit notes (Amendment)', NULL, 'Yes', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SPQR2BSummary_ISOSchema (Fld_Id, Fld_Sequence, Fld_Part, Fld_Heading, Fld_GSTR3BTable, Fld_itcavl, Fld_rev, Fld_igst, Fld_cgst, Fld_sgst, Fld_cess, Fld_Advisory, Fld_Month, Fld_FinancialYear, Fld_Gstr3BFilingDate, Col_1, Col_2, Col_3, Col_4) VALUES (28, '1', 'PA-1', 'All other ITC - Supplies from registered persons other than reverse charge', 'NA', 'No', NULL, NULL, NULL, NULL, NULL, 'Such credit shall not be taken in FORM GSTR-3B', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SPQR2BSummary_ISOSchema (Fld_Id, Fld_Sequence, Fld_Part, Fld_Heading, Fld_GSTR3BTable, Fld_itcavl, Fld_rev, Fld_igst, Fld_cgst, Fld_sgst, Fld_cess, Fld_Advisory, Fld_Month, Fld_FinancialYear, Fld_Gstr3BFilingDate, Col_1, Col_2, Col_3, Col_4) VALUES (29, '2', 'PA-1', 'B2B - Invoices', NULL, 'No', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SPQR2BSummary_ISOSchema (Fld_Id, Fld_Sequence, Fld_Part, Fld_Heading, Fld_GSTR3BTable, Fld_itcavl, Fld_rev, Fld_igst, Fld_cgst, Fld_sgst, Fld_cess, Fld_Advisory, Fld_Month, Fld_FinancialYear, Fld_Gstr3BFilingDate, Col_1, Col_2, Col_3, Col_4) VALUES (30, '3', 'PA-1', 'B2B - Debit notes', NULL, 'No', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SPQR2BSummary_ISOSchema (Fld_Id, Fld_Sequence, Fld_Part, Fld_Heading, Fld_GSTR3BTable, Fld_itcavl, Fld_rev, Fld_igst, Fld_cgst, Fld_sgst, Fld_cess, Fld_Advisory, Fld_Month, Fld_FinancialYear, Fld_Gstr3BFilingDate, Col_1, Col_2, Col_3, Col_4) VALUES (31, '4', 'PA-1', 'B2B - Invoices (Amendment)', NULL, 'No', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SPQR2BSummary_ISOSchema (Fld_Id, Fld_Sequence, Fld_Part, Fld_Heading, Fld_GSTR3BTable, Fld_itcavl, Fld_rev, Fld_igst, Fld_cgst, Fld_sgst, Fld_cess, Fld_Advisory, Fld_Month, Fld_FinancialYear, Fld_Gstr3BFilingDate, Col_1, Col_2, Col_3, Col_4) VALUES (32, '5', 'PA-1', 'B2B - Debit notes (Amendment)', NULL, 'No', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SPQR2BSummary_ISOSchema (Fld_Id, Fld_Sequence, Fld_Part, Fld_Heading, Fld_GSTR3BTable, Fld_itcavl, Fld_rev, Fld_igst, Fld_cgst, Fld_sgst, Fld_cess, Fld_Advisory, Fld_Month, Fld_FinancialYear, Fld_Gstr3BFilingDate, Col_1, Col_2, Col_3, Col_4) VALUES (33, '6', 'PA-2', 'Inward Supplies from ISD', 'NA', 'No', NULL, NULL, NULL, NULL, NULL, 'Such credit shall not be taken in FORM GSTR-3B', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SPQR2BSummary_ISOSchema (Fld_Id, Fld_Sequence, Fld_Part, Fld_Heading, Fld_GSTR3BTable, Fld_itcavl, Fld_rev, Fld_igst, Fld_cgst, Fld_sgst, Fld_cess, Fld_Advisory, Fld_Month, Fld_FinancialYear, Fld_Gstr3BFilingDate, Col_1, Col_2, Col_3, Col_4) VALUES (34, '7', 'PA-2', 'ISD - Invoices', NULL, 'No', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SPQR2BSummary_ISOSchema (Fld_Id, Fld_Sequence, Fld_Part, Fld_Heading, Fld_GSTR3BTable, Fld_itcavl, Fld_rev, Fld_igst, Fld_cgst, Fld_sgst, Fld_cess, Fld_Advisory, Fld_Month, Fld_FinancialYear, Fld_Gstr3BFilingDate, Col_1, Col_2, Col_3, Col_4) VALUES (35, '8', 'PA-2', 'ISD - Invoices (Amendment)', NULL, 'No', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SPQR2BSummary_ISOSchema (Fld_Id, Fld_Sequence, Fld_Part, Fld_Heading, Fld_GSTR3BTable, Fld_itcavl, Fld_rev, Fld_igst, Fld_cgst, Fld_sgst, Fld_cess, Fld_Advisory, Fld_Month, Fld_FinancialYear, Fld_Gstr3BFilingDate, Col_1, Col_2, Col_3, Col_4) VALUES (36, '9', 'PA-3', 'Inward Supplies liable for reverse charge', '3.1(d)', 'No', NULL, NULL, NULL, NULL, NULL, 'These supplies shall be declared in Table 3.1(d) of FORM GSTR-3B for payment of tax.', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SPQR2BSummary_ISOSchema (Fld_Id, Fld_Sequence, Fld_Part, Fld_Heading, Fld_GSTR3BTable, Fld_itcavl, Fld_rev, Fld_igst, Fld_cgst, Fld_sgst, Fld_cess, Fld_Advisory, Fld_Month, Fld_FinancialYear, Fld_Gstr3BFilingDate, Col_1, Col_2, Col_3, Col_4) VALUES (37, '10', 'PA-3', 'B2B - Invoices', NULL, 'No', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SPQR2BSummary_ISOSchema (Fld_Id, Fld_Sequence, Fld_Part, Fld_Heading, Fld_GSTR3BTable, Fld_itcavl, Fld_rev, Fld_igst, Fld_cgst, Fld_sgst, Fld_cess, Fld_Advisory, Fld_Month, Fld_FinancialYear, Fld_Gstr3BFilingDate, Col_1, Col_2, Col_3, Col_4) VALUES (38, '11', 'PA-3', 'B2B - Debit notes', NULL, 'No', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SPQR2BSummary_ISOSchema (Fld_Id, Fld_Sequence, Fld_Part, Fld_Heading, Fld_GSTR3BTable, Fld_itcavl, Fld_rev, Fld_igst, Fld_cgst, Fld_sgst, Fld_cess, Fld_Advisory, Fld_Month, Fld_FinancialYear, Fld_Gstr3BFilingDate, Col_1, Col_2, Col_3, Col_4) VALUES (39, '12', 'PA-3', 'B2B - Invoices (Amendment)', NULL, 'No', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SPQR2BSummary_ISOSchema (Fld_Id, Fld_Sequence, Fld_Part, Fld_Heading, Fld_GSTR3BTable, Fld_itcavl, Fld_rev, Fld_igst, Fld_cgst, Fld_sgst, Fld_cess, Fld_Advisory, Fld_Month, Fld_FinancialYear, Fld_Gstr3BFilingDate, Col_1, Col_2, Col_3, Col_4) VALUES (40, '13', 'PA-3', 'B2B - Debit notes (Amendment)', NULL, 'No', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SPQR2BSummary_ISOSchema (Fld_Id, Fld_Sequence, Fld_Part, Fld_Heading, Fld_GSTR3BTable, Fld_itcavl, Fld_rev, Fld_igst, Fld_cgst, Fld_sgst, Fld_cess, Fld_Advisory, Fld_Month, Fld_FinancialYear, Fld_Gstr3BFilingDate, Col_1, Col_2, Col_3, Col_4) VALUES (41, '14', 'PB-1', 'Others', '4(B)(2)', 'No', NULL, NULL, NULL, NULL, NULL, 'Credit shall be reversed under Table 4(B)(2) of FORM GSTR-3B.', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SPQR2BSummary_ISOSchema (Fld_Id, Fld_Sequence, Fld_Part, Fld_Heading, Fld_GSTR3BTable, Fld_itcavl, Fld_rev, Fld_igst, Fld_cgst, Fld_sgst, Fld_cess, Fld_Advisory, Fld_Month, Fld_FinancialYear, Fld_Gstr3BFilingDate, Col_1, Col_2, Col_3, Col_4) VALUES (42, '15', 'PB-1', 'B2B - Credit notes', NULL, 'No', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SPQR2BSummary_ISOSchema (Fld_Id, Fld_Sequence, Fld_Part, Fld_Heading, Fld_GSTR3BTable, Fld_itcavl, Fld_rev, Fld_igst, Fld_cgst, Fld_sgst, Fld_cess, Fld_Advisory, Fld_Month, Fld_FinancialYear, Fld_Gstr3BFilingDate, Col_1, Col_2, Col_3, Col_4) VALUES (43, '16', 'PB-1', 'B2B - Credit notes (Amendment)', NULL, 'No', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SPQR2BSummary_ISOSchema (Fld_Id, Fld_Sequence, Fld_Part, Fld_Heading, Fld_GSTR3BTable, Fld_itcavl, Fld_rev, Fld_igst, Fld_cgst, Fld_sgst, Fld_cess, Fld_Advisory, Fld_Month, Fld_FinancialYear, Fld_Gstr3BFilingDate, Col_1, Col_2, Col_3, Col_4) VALUES (44, '17', 'PB-1', 'B2B - Credit notes (Reverse charge)', NULL, 'No', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SPQR2BSummary_ISOSchema (Fld_Id, Fld_Sequence, Fld_Part, Fld_Heading, Fld_GSTR3BTable, Fld_itcavl, Fld_rev, Fld_igst, Fld_cgst, Fld_sgst, Fld_cess, Fld_Advisory, Fld_Month, Fld_FinancialYear, Fld_Gstr3BFilingDate, Col_1, Col_2, Col_3, Col_4) VALUES (45, '18', 'PB-1', 'B2B - Credit notes (Reverse charge)(Amendment)', NULL, 'No', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SPQR2BSummary_ISOSchema (Fld_Id, Fld_Sequence, Fld_Part, Fld_Heading, Fld_GSTR3BTable, Fld_itcavl, Fld_rev, Fld_igst, Fld_cgst, Fld_sgst, Fld_cess, Fld_Advisory, Fld_Month, Fld_FinancialYear, Fld_Gstr3BFilingDate, Col_1, Col_2, Col_3, Col_4) VALUES (46, '19', 'PB-1', 'ISD - Credit notes', NULL, 'No', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SPQR2BSummary_ISOSchema (Fld_Id, Fld_Sequence, Fld_Part, Fld_Heading, Fld_GSTR3BTable, Fld_itcavl, Fld_rev, Fld_igst, Fld_cgst, Fld_sgst, Fld_cess, Fld_Advisory, Fld_Month, Fld_FinancialYear, Fld_Gstr3BFilingDate, Col_1, Col_2, Col_3, Col_4) VALUES (47, '20', 'PB-1', 'ISD - Credit notes (Amendment)', NULL, 'No', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+
+COMMIT TRANSACTION;
+PRAGMA foreign_keys = on;
+
+
+CREATE TABLE SPQECreditRevershalandReclaimLedger (
+    Fld_Id                  INTEGER PRIMARY KEY AUTOINCREMENT
+                                    NOT NULL,
+    Fld_Sequence            TEXT,
+    Fld_Date                TEXT,
+    Fld_ReferenceNo         TEXT,
+    Fld_TaxPeriod           TEXT,
+    Fld_Description         TEXT,
+    Fld_TransactionType     TEXT,
+    Fld_ITCClaimIGST        TEXT,
+    Fld_ITCClaimCGST        TEXT,
+    Fld_ITCClaimSGST        TEXT,
+    Fld_ITCClaimCESS        TEXT,
+    Fld_ITCClaimTOTAL       TEXT,
+    Fld_ITCReversalIGST     TEXT,
+    Fld_ITCReversalCGST     TEXT,
+    Fld_ITCReversalSGST     TEXT,
+    Fld_ITCReversalCESS     TEXT,
+    Fld_ITCReversalTOTAL    TEXT,
+    Fld_ITCReclaimedIGST    TEXT,
+    Fld_ITCReclaimedCGST    TEXT,
+    Fld_ITCReclaimedSGST    TEXT,
+    Fld_ITCReclaimedCESS    TEXT,
+    Fld_ITCReclaimedTOTAL   TEXT,
+    Fld_ClosingBalanceIGST  TEXT,
+    Fld_ClosingBalanceCGST  TEXT,
+    Fld_ClosingBalanceSGST  TEXT,
+    Fld_ClosingBalanceCESS  TEXT,
+    Fld_ClosingBalanceTOTAL TEXT,
+    Fld_Month               TEXT,
+    Fld_FinancialYear       TEXT
+);
+
+
+CREATE TABLE SPQR2BEcomm (
+    Fld_Id            INTEGER PRIMARY KEY AUTOINCREMENT
+                              NOT NULL,
+    Fld_GSTIN         TEXT,
+    Fld_supfildt      TEXT,
+    Fld_supprd        TEXT,
+    Fld_trdnm         TEXT,
+    Fld_diffprcnt     TEXT,
+    Fld_dt            TEXT,
+    Fld_inum          TEXT,
+    Fld_itcavl        TEXT,
+    Fld_pos           TEXT,
+    Fld_rev           TEXT,
+    Fld_rsn           TEXT,
+    Fld_typ           TEXT,
+    Fld_val           TEXT,
+    Fld_cess          TEXT,
+    Fld_cgst          TEXT,
+    Fld_igst          TEXT,
+    Fld_num           TEXT,
+    Fld_rt            TEXT,
+    Fld_sgst          TEXT,
+    Fld_txval         TEXT,
+    Fld_Month         TEXT,
+    Fld_FinancialYear TEXT,
+    Fld_Sequence      TEXT,
+    Col_1             TEXT,
+    Fld_Irn           TEXT,
+    Fld_IrnDate       TEXT,
+    Fld_Source        TEXT
+);
+
+
+CREATE TABLE SPQR2BEcommAmend (
+    Fld_Id            INTEGER PRIMARY KEY AUTOINCREMENT
+                              NOT NULL,
+    Fld_GSTIN         TEXT,
+    Fld_supfildt      TEXT,
+    Fld_supprd        TEXT,
+    Fld_trdnm         TEXT,
+    Fld_diffprcnt     TEXT,
+    Fld_dt            TEXT,
+    Fld_inum          TEXT,
+    Fld_itcavl        TEXT,
+    Fld_pos           TEXT,
+    Fld_rev           TEXT,
+    Fld_rsn           TEXT,
+    Fld_typ           TEXT,
+    Fld_val           TEXT,
+    Fld_cess          TEXT,
+    Fld_cgst          TEXT,
+    Fld_igst          TEXT,
+    Fld_num           TEXT,
+    Fld_rt            TEXT,
+    Fld_sgst          TEXT,
+    Fld_txval         TEXT,
+    Fld_Month         TEXT,
+    Fld_FinancialYear TEXT,
+    Fld_Sequence      TEXT,
+    Col_1             TEXT,
+    Fld_Irn           TEXT,
+    Fld_IrnDate       TEXT,
+    Fld_Source        TEXT
+);
+
+
+
+
+ALTER TABLE SPQR2BB2B ADD COLUMN Fld_Irn TEXT;
+ALTER TABLE SPQR2BB2B ADD COLUMN Fld_IrnDate TEXT;
+ALTER TABLE SPQR2BB2B ADD COLUMN Fld_Source TEXT;
+
+ALTER TABLE SPQR2BCDNR ADD COLUMN Fld_Irn TEXT;
+ALTER TABLE SPQR2BCDNR ADD COLUMN Fld_IrnDate TEXT;
+ALTER TABLE SPQR2BCDNR ADD COLUMN Fld_Source TEXT;
+
+CREATE TABLE SPQR1ECommerce (
+                                Fld_Id              INTEGER PRIMARY KEY AUTOINCREMENT
+                                                    NOT NULL,   
+                                Fld_Sequence        TEXT,
+                                Fld_GSTIN           TEXT,   
+                                Fld_TradeName       TEXT,
+                                Fld_Rcm             TEXT,    
+                                Fld_Rate            TEXT,
+                                Fld_Taxable         TEXT,
+                                Fld_IGSTAmnt        TEXT,
+                                Fld_CGSTAmnt        TEXT,
+                                Fld_SGSTAmnt        TEXT,
+                                Fld_CessAmnt        TEXT,   
+                                Fld_Month           TEXT,
+                                Fld_FinancialYear   TEXT,
+                                Fld_Flag            TEXT
+                                );
+
+
+CREATE TABLE SPQR3BDetailsOfSupplies
+(Fld_Id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+Fld_Sequence INTEGER,
+Fld_Description TEXT, Fld_TotalTaxableValue TEXT,
+Fld_IGST TEXT, Fld_CGST TEXT, Fld_SGST TEXT, Fld_CESS TEXT, Fld_Month TEXT, Fld_FileStatus Text, Fld_FinancialYear TEXT);
+
+
+CREATE TABLE SPQRGstr1B2b (
+    Fld_Sequence          TEXT PRIMARY KEY
+                               NOT NULL,
+    Fld_CustomerName      TEXT NOT NULL,
+    Fld_PartyName         TEXT,
+    Fld_InvoiceNo         TEXT,
+    Fld_InvoiceDate       TEXT,
+    Fld_InvoiceValue      TEXT,
+    Fld_InvType           TEXT,
+    Fld_IGSTRate          TEXT,
+    Fld_InvoiceTaxableVal TEXT,
+    Fld_IGSTAmnt          TEXT,
+    Fld_CGSTAmnt          TEXT,
+    Fld_SGSTAmnt          TEXT,
+    Fld_CessAmount        TEXT,
+    Fld_POS               TEXT,
+    Fld_IndSupAttac       TEXT,
+    Fld_GSTINofEcom       TEXT,
+    Fld_FileStatus        TEXT,
+    fy                    TEXT,
+    month                 TEXT
+);
+
+CREATE TABLE SPQRGstr1B2cl (
+    Fld_Sequence     TEXT,
+    Fld_PartyName    TEXT,
+    Fld_POS          TEXT,
+    Fld_InvoiceNo    TEXT,
+    Fld_InvoiceDate  TEXT,
+    Fld_InvoiceValue TEXT,
+    Fld_Rate         TEXT,
+    Fld_TaxableValue TEXT,
+    Fld_IGST         TEXT,
+    Fld_Cess         TEXT,
+    Fld_GSTINEComm   TEXT,
+    Fld_FileStatus   TEXT,
+    fy               TEXT,
+    month            TEXT
+);
+
+CREATE TABLE SPQRGstr1B2cs (
+    Fld_Sequence     TEXT,
+    Fld_SupplyType   TEXT,
+    Fld_POS          TEXT,
+    Fld_Rate         TEXT,
+    Fld_TaxableValue TEXT,
+    Fld_IGST         TEXT,
+    Fld_CGST         TEXT,
+    Fld_SGST         TEXT,
+    Fld_Cess         TEXT,
+    Fld_GSTINEComm   TEXT,
+    Fld_FileStatus   TEXT,
+    Fld_NameofEcom   TEXT,
+    fy               TEXT,
+    month            TEXT
+);
+CREATE TABLE SPQRGstr1CDN (
+    Fld_Sequence        TEXT,
+    Fld_GSTIN           TEXT,
+    Fld_PartyName       TEXT,
+    Fld_TypeOfNote      TEXT,
+    Fld_PreGST          TEXT,
+    Fld_DbtCrdtNoteNo   TEXT,
+    Fld_DbtCrdtNoteDate TEXT,
+    Fld_OrgInvoiceNo    TEXT,
+    Fld_OrginvoiceDate  TEXT,
+    Fld_OrgInvoiceValue TEXT,
+    Fld_Rate            NTEXT,
+    Fld_Taxable         TEXT,
+    Fld_IGSTAmnt        TEXT,
+    Fld_CGSTAmnt        TEXT,
+    Fld_SGSTAmnt        TEXT,
+    Fld_CessAmnt        TEXT,
+    Fld_PlaceOfSupply   TEXT,
+    Fld_FileStatus      TEXT,
+    fy                  TEXT,
+    month               TEXT,
+    gstin               TEXT
+);
+
+CREATE TABLE SPQRGstr1CDNUR (
+    Fld_Sequence        TEXT,
+    Fld_PartyName       TEXT,
+    Fld_SupplyType      TEXT,
+    Fld_TypeOfNote      TEXT,
+    Fld_PreGST          TEXT,
+    Fld_DbtCrdtNoteNo   TEXT,
+    Fld_DbtCrdtNoteDate TEXT,
+    Fld_OrgInvoiceValue TEXT,
+    Fld_Rate            TEXT,
+    Fld_Taxable         TEXT,
+    Fld_IGSTAmnt        TEXT,
+    Fld_CGSTAmnt        TEXT,
+    Fld_SGSTAmnt        TEXT,
+    Fld_CessAmnt        TEXT,
+    Fld_PlaceOfSupply   TEXT,
+    Fld_FileStatus      TEXT,
+    fy                  TEXT,
+    month               TEXT,
+    gstin               TEXT
+);
+CREATE TABLE SPQRGstr1ExpZero (
+    Fld_Sequence              TEXT,
+    Fld_Type                  TEXT,
+    Fld_party                 TEXT,
+    Fld_InvoiceNo             TEXT,
+    Fld_InvoiceDate           TEXT,
+    Fld_InvoiceValue          TEXT,
+    Fld_PortCode              TEXT,
+    Fld_Shipingbill           TEXT,
+    Fld_Billdate              TEXT,
+    Fld_IGSTRate              TEXT,
+    Fld_IGSTInvoiceTaxableVal TEXT,
+    Fld_IGSTAmnt              TEXT,
+    Fld_CESS                  TEXT,
+    Fld_FileStatus            TEXT,
+    fy                        TEXT,
+    month                     TEXT,
+    gstin                     TEXT
+);
+
+
+CREATE TABLE SPQLast5Return (
+    Fld_Return TEXT
+);
+
+alter table SPQR2Form4 add Column Fld_ERPVoucherNo TEXT;
+alter table SPQR2Form4 add Column Fld_BranchCode TEXT;
+
+alter table SPQR2Form7Other add Column Fld_ERPVoucherNo TEXT;
+
+alter table SPQTdsReceivedDetail add column 'Fld_DeductorCollectorName' TEXT;
+alter table SPQTdsReceivedDetail Add column 'Editable' TEXT; 
+
+alter table SPQTdsAmendReceivedDetail add column 'Fld_DeductorCollectorName' TEXT;
+alter table SPQTdsAmendReceivedDetail Add column 'Editable' TEXT; 
+
+alter table SPQTcsReceivedDetail add column 'Fld_DeductorCollectorName' TEXT;
+alter table SPQTcsReceivedDetail Add column 'Editable' TEXT; 
+
+alter table SPQTcsAmendReceivedDetail add column 'Fld_DeductorCollectorName' TEXT;
+alter table SPQTcsAmendReceivedDetail Add column 'Editable' TEXT; 
+
+
+CREATE TABLE SQPOptInForQuarterReturn (
+    Fld_Id                  INTEGER PRIMARY KEY,
+    isTurnOverAvailable     TEXT,
+    turnover                TEXT,
+    turnoverThreshold       TEXT,
+    turnoverFy              TEXT,
+    isValid                 TEXT,
+    isdefault               TEXT,
+    quarter                 TEXT,
+    profile                 TEXT,
+    window_start_dt         TEXT,
+    window_end_dt           TEXT,
+    is_active               TEXT,
+    r1_m1_apl               TEXT,
+    r1_m2_apl               TEXT,
+    r1_m3_apl               TEXT,
+    r3b_m1_apl              TEXT,
+    r3b_m2_apl              TEXT,
+    r3b_m3_apl              TEXT,
+    r1_m1_dd                TEXT,
+    r1_m2_dd                TEXT,
+    r1_m3_dd                TEXT,
+    r3b_m1_dd               TEXT,
+    r3b_m2_dd               TEXT,
+    r3b_m3_dd               TEXT,
+    active_other_r1_m1_apl  TEXT,
+    active_other_r1_m2_apl  TEXT,
+    active_other_r1_m3_apl  TEXT,
+    active_other_r3b_m1_apl TEXT,
+    active_other_r3b_m2_apl TEXT,
+    active_other_r3b_m3_apl TEXT,
+    active_other_r1_m1_dd   TEXT,
+    active_other_r1_m2_dd   TEXT,
+    active_other_r1_m3_dd   TEXT,
+    active_other_r3b_m1_dd  TEXT,
+    active_other_r3b_m2_dd  TEXT,
+    active_other_r3b_m3_dd  TEXT,
+    UserAction              TEXT,
+    UserActionDate          TEXT,
+    Fld_Quarter             TEXT,
+    Fld_FinancialYear       TEXT
+);
+
+CREATE TABLE SPQR1B2BERR (
+    Fld_Id                INTEGER      PRIMARY KEY AUTOINCREMENT
+                                       NOT NULL,
+    Fld_Sequence          TEXT,
+    Fld_CustomerName      TEXT,
+    Fld_PartyName         TEXT,
+    Fld_InvoiceNo         TEXT,
+    Fld_InvoiceDate       TEXT,
+    Fld_InvoiceValue      TEXT,
+    Fld_IGSTRate          TEXT,
+    Fld_InvoiceTaxableVal TEXT,
+    Fld_IGSTAmnt          TEXT,
+    Fld_CGSTAmnt          TEXT,
+    Fld_SGSTAmnt          TEXT,
+    Fld_CessAmount        TEXT,
+    Fld_POS               TEXT,
+    Fld_IndSupAttac       TEXT,
+    Fld_InvType           TEXT,
+    Fld_GSTINofEcom       TEXT,
+    Fld_FileStatus        TEXT,
+    Fld_Month             TEXT,
+    Fld_FinancialYear     TEXT,
+    Fld_Error             VARCHAR (60) 
+);
+CREATE TABLE SPQR1EINVCB2B (
+    Fld_Id            INTEGER PRIMARY KEY AUTOINCREMENT
+                              NOT NULL,
+    Fld_Sequence      TEXT,
+    Fld_CustomerName  TEXT,
+    Fld_ctin          TEXT,
+    Fld_trdname       TEXT,
+    Fld_inum          TEXT,
+    Fld_idt           TEXT,
+    Fld_val           TEXT,
+    Fld_pos           TEXT,
+    Fld_rchrg         TEXT,
+    Fld_etin          TEXT,
+    Fld_inv_typ       TEXT,
+    Fld_srctyp        TEXT,
+    Fld_irn           TEXT,
+    Fld_irngendate    TEXT,
+    Fld_einvstatus    TEXT,
+    Fld_autodft       TEXT,
+    Fld_autodftdt     TEXT,
+    Fld_errorCd       TEXT,
+    Fld_errorMsg      TEXT,
+    Fld_sbpcode       TEXT,
+    Fld_sbnum         TEXT,
+    Fld_sbdt          TEXT,
+    Fld_num           TEXT,
+    Fld_rt            TEXT,
+    Fld_txval         TEXT,
+    Fld_iamt          TEXT,
+    Fld_camt          TEXT,
+    Fld_samt          TEXT,
+    Fld_csamt         TEXT,
+    Fld_ComapanyGstin,
+    Fld_Month         TEXT,
+    Fld_FinancialYear TEXT
+);
+
+CREATE TABLE SPQR1EINVCDNR (
+    Fld_Id            INTEGER PRIMARY KEY AUTOINCREMENT
+                              NOT NULL,
+    Fld_Sequence      TEXT,
+    Fld_CustomerName  TEXT,
+    Fld_ctin          TEXT,
+    Fld_trdname       TEXT,
+    Fld_chksum        TEXT,
+    Fld_ntty          TEXT,
+    Fld_nt_num        TEXT,
+    Fld_nt_dt         TEXT,
+    Fld_val           TEXT,
+    Fld_pos           TEXT,
+    Fld_rchrg         TEXT,
+    Fld_inv_typ       TEXT,
+    Fld_srctyp        TEXT,
+    Fld_irn           TEXT,
+    Fld_irngendate    TEXT,
+    Fld_einvstatus    TEXT,
+    Fld_autodft       TEXT,
+    Fld_autodftdt     TEXT,
+    Fld_errorCd       TEXT,
+    Fld_errorMsg      TEXT,
+    Fld_num           TEXT,
+    Fld_rt            TEXT,
+    Fld_txval         TEXT,
+    Fld_iamt          TEXT,
+    Fld_camt          TEXT,
+    Fld_samt          TEXT,
+    Fld_csamt         TEXT,
+    Fld_ComapanyGstin,
+    Fld_Month         TEXT,
+    Fld_FinancialYear TEXT
+);
+
+CREATE TABLE SPQR1EINVCDUNR (
+    Fld_Id            INTEGER PRIMARY KEY AUTOINCREMENT
+                              NOT NULL,
+    Fld_Sequence      TEXT,
+    Fld_chksum        TEXT,
+    Fld_typ           TEXT,
+    Fld_ntty          TEXT,
+    Fld_nt_num        TEXT,
+    Fld_nt_dt         TEXT,
+    Fld_val           TEXT,
+    Fld_pos           TEXT,
+    Fld_srctyp        TEXT,
+    Fld_irn           TEXT,
+    Fld_irngendate    TEXT,
+    Fld_einvstatus    TEXT,
+    Fld_autodft       TEXT,
+    Fld_autodftdt     TEXT,
+    Fld_errorCd       TEXT,
+    Fld_errorMsg      TEXT,
+    Fld_num           TEXT,
+    Fld_rt            TEXT,
+    Fld_txval         TEXT,
+    Fld_iamt          TEXT,
+    Fld_camt          TEXT,
+    Fld_samt          TEXT,
+    Fld_csamt         TEXT,
+    Fld_ComapanyGstin,
+    Fld_Month         TEXT,
+    Fld_FinancialYear TEXT
+);
+
+CREATE TABLE SPQR1EINVEXP (
+    Fld_Id            INTEGER PRIMARY KEY AUTOINCREMENT
+                              NOT NULL,
+    Fld_Sequence      TEXT,
+    Fld_exp_typ       TEXT,
+    Fld_chksum        TEXT,
+    Fld_inum          TEXT,
+    Fld_idt           TEXT,
+    Fld_val           TEXT,
+    Fld_pos           TEXT,
+    Fld_rchrg         TEXT,
+    Fld_etin          TEXT,
+    Fld_inv_typ       TEXT,
+    Fld_srctyp        TEXT,
+    Fld_irn           TEXT,
+    Fld_irngendate    TEXT,
+    Fld_einvstatus    TEXT,
+    Fld_autodft       TEXT,
+    Fld_autodftdt     TEXT,
+    Fld_errorCd       TEXT,
+    Fld_errorMsg      TEXT,
+    Fld_sbpcode       TEXT,
+    Fld_sbnum         TEXT,
+    Fld_sbdt          TEXT,
+    Fld_num           TEXT,
+    Fld_rt            TEXT,
+    Fld_txval         TEXT,
+    Fld_iamt          TEXT,
+    Fld_camt          TEXT,
+    Fld_samt          TEXT,
+    Fld_csamt         TEXT,
+    Fld_ComapanyGstin,
+    Fld_Month         TEXT,
+    Fld_FinancialYear TEXT
+);
+
+
+
+
+
+CREATE TABLE SPQR1EWBB2B (
+    Fld_id            INTEGER PRIMARY KEY AUTOINCREMENT
+                              NOT NULL,
+    Fld_Sequence      INTEGER,
+    Fld_ctin          VARCHAR (20),
+    Fld_RecName       TEXT,
+    Fld_Invcval       DOUBLE,
+    Fld_Inv_typ       VARCHAR (20),
+    Fld_Pos           TEXT,
+    Fld_Invcdt        STRING,
+    Fld_rchrg         CHAR (5),
+    Fld_invcnum       VARCHAR (20),
+    Fld_numofitm      INTEGER,
+    Fld_csamt         DOUBLE,
+    Fld_samt          DOUBLE,
+    Fld_rt            DOUBLE,
+    Fld_txval         DOUBLE,
+    Fld_camt          DOUBLE,
+    Fld_iamt          DOUBLE,
+    Fld_ComapanyGstin VARCHAR (20),
+    Fld_Month         VARCHAR (20),
+    Fld_FinancialYear VARCHAR (20) 
+);
+
+CREATE TABLE SPQR1EWBEXP (
+    Fld_id            INTEGER PRIMARY KEY AUTOINCREMENT
+                              NOT NULL,
+    Fld_Sequence      INTEGER,
+    Fld_exp_typ       VARCHAR (20),
+    Fld_Invcval       DOUBLE,
+    Fld_Invcdt        STRING,
+    Fld_invcnum       VARCHAR (20),
+    Fld_rt            DOUBLE,
+    Fld_txval         DOUBLE,
+    Fld_iamt          DOUBLE,
+    Fld_csamt         DOUBLE,
+    Fld_ComapanyGstin VARCHAR (20),
+    Fld_Month         VARCHAR (20),
+    Fld_FinancialYear VARCHAR (20) 
+);
+
+
+
+>>>>>>> e4a1cb3eb1a8414ad98698bd0491af4c3493d7f0
