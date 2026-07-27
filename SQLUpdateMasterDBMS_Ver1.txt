@@ -1,3 +1,10 @@
+CREATE TABLE SPQDownloadNoticeOperationStatus (
+    Fld_GSTIN            TEXT (20),
+    Fld_OperationDate    TEXT (20),
+    Fld_OperationMessage TEXT (200) 
+);
+
+
 
 alter table SPQTurnoverReport add column  'Fld_Fiingdate'  VARCHAR (300);
 alter table SPQCompanyMaster add column  'Fld_DeviceId'  VARCHAR (300);
