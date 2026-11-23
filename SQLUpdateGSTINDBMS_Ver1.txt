@@ -44,6 +44,36 @@ CREATE TABLE IF NOT EXISTS SPQGSTR4 (
     Fld_FinancialYear TEXT
 );
 
+create table if not exists SPQgstr2bItcEntry(Fld_sectionName text,Fld_GSTIN text,
+ Fld_InvoiceNo text, Fld_invoiceDate text,Fld_Eligibilty text);
+
+create table if not exists gstr2bITCGSTINMaster (Fld_GSTIN text,Fld_Criteria text);
+
+CREATE TABLE if not exists SPQR2BRejectedSummary (
+                            Fld_Id               INTEGER PRIMARY KEY AUTOINCREMENT
+                                                         NOT NULL,
+                            Fld_Sequence         TEXT,
+                            Fld_Part             TEXT,
+                            Fld_Heading          TEXT,
+                            Fld_GSTR3BTable      TEXT,
+                            Fld_itcavl           TEXT,
+                            Fld_rev              TEXT,
+                            Fld_igst             TEXT,
+                            Fld_cgst             TEXT,
+                            Fld_sgst             TEXT,
+                            Fld_cess             TEXT,
+                            Fld_Advisory         TEXT,
+                            Fld_Month            TEXT,
+                            Fld_FinancialYear    TEXT,
+                            Fld_Gstr3BFilingDate TEXT,
+                            Col_1                TEXT,
+                            Col_2                TEXT,
+                            Col_3                TEXT,
+                            Col_4                TEXT
+                        );
+
+
+
 
 CREATE TABLE IF NOT EXISTS SPQNegativeLiability (
     Fld_SrNo          INTEGER,
@@ -71,6 +101,14 @@ CREATE TABLE IF NOT EXISTS SPQNegativeLiability (
     Fld_BAL_OTRC_CESS REAL    DEFAULT 0,
     Fld_CreatedOn     TEXT    DEFAULT (datetime('now') ) 
 );
+
+
+CREATE TABLE IF NOT Exists SPQTallyPartyLedgerMaping (
+                        Fld_Id         INTEGER PRIMARY KEY AUTOINCREMENT,
+                        Fld_GSTIN      TEXT    ,
+                        Fld_LedgerName TEXT,
+                        Fld_Type       TEXT
+                    );
 
 CREATE TABLE IF NOT EXISTS SPQIMSB2B (Fld_ID            INTEGER PRIMARY KEY AUTOINCREMENT,Fld_Gstin         TEXT,Fld_TradeName     TEXT,Fld_IsBlocked     TEXT,Fld_RtnPrd        TEXT,Fld_srcform       TEXT,Fld_InvoiceNo     TEXT,Fld_InvoiceDate   TEXT,Fld_InvoiceType   TEXT,Fld_Pos           TEXT,Fld_srcfilstatus  TEXT,Fld_InvoiceValue  TEXT,Fld_TaxableValue  TEXT,Fld_IGST          TEXT,Fld_CGST          TEXT,Fld_SGST          TEXT,Fld_CESS          TEXT,Fld_action        TEXT,Fld_Month         TEXT,Fld_FinancialYear TEXT,Fld_RevStatus     TEXT);
 
@@ -947,7 +985,10 @@ alter table SPQTcsReceivedDetail add column 'Fld_DeductorCollectorName' TEXT;
 alter table SPQTcsReceivedDetail Add column 'Editable' TEXT; 
 
 alter table SPQTcsAmendReceivedDetail add column 'Fld_DeductorCollectorName' TEXT;
-alter table SPQTcsAmendReceivedDetail Add column 'Editable' TEXT; 
+alter table SPQTcsAmendReceivedDetail Add column 'Editable' TEXT;
+alter table SPQR2Form4 add column Fld_Reversal text;
+alter table SPQR2Form7Other add column Fld_Reversal text;
+alter table SPQGSTR4 add column Fld_FinancialYear text;
 
 
 
